@@ -197,9 +197,20 @@ return [
     |
     */
 
-    'api_scopes' => env('SHOPIFY_API_SCOPES', 'read_products,write_products'),
+    'api_scopes' => env('SHOPIFY_API_SCOPES', 'read_products,write_products,
+    read_assigned_fulfillment_orders, read_checkouts, read_content, read_customers, read_discounts,
+    read_draft_orders, read_files, read_fulfillments, read_gift_cards, read_inventory,
+    read_legal_policies, read_locales, read_locations, read_marketing_events,
+    read_merchant_managed_fulfillment_orders, read_orders, read_payment_terms, read_price_rules,
+    read_products, read_product_listings, read_publications, read_purchase_options, read_reports,
+    read_resource_feedbacks, read_script_tags, read_shipping, read_shopify_payments_disputes,
+    read_shopify_payments_payouts, read_returns, read_themes, read_translations,
+    read_third_party_fulfillment_orders, read_order_edits'),
 
     /*
+    read_users - shopify plus
+    read_all_orders - need open permissions
+
     |--------------------------------------------------------------------------
     | Shopify API Grant Mode
     |--------------------------------------------------------------------------
