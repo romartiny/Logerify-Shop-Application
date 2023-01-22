@@ -283,6 +283,11 @@ nav.close ~ .dashboard .top {
     margin: 0 30px;
 }
 
+.shop-name:hover {
+    color: var(--text-color-rever);
+    transition: 1s;
+}
+
 .top .search-box input {
     position: absolute;
     border: 1px solid var(--border-color);
@@ -426,7 +431,73 @@ nav.close ~ .dashboard .top {
 
 .recent-type {
     background-color: #06a4ff;
-    color: var(--text-color);
+    color: #151515;
+}
+
+.verb-unpublished {
+    background-color: #c0ae00;
+}
+
+.verb-published {
+    background-color: #00c086;
+}
+
+.verb-create {
+    background-color: #00c036;
+}
+
+.verb-status_changed {
+    background-color: #00c0c0;
+}
+
+.verb-destroy {
+    background-color: #f5546e;
+}
+
+.verb-update {
+    background-color: #54adf5;
+}
+
+.modal-window {
+    width: 400px;
+    height: 400px;
+    margin:0 auto;
+    display:table;
+    position: absolute;
+    left: 0;
+    right:0;
+    top: 50%;
+    -webkit-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    -o-transform:translateY(-50%);
+    transform:translateY(-50%);
+    transition: var(--tran-05);
+}
+
+.hidden {
+    display: none;
+    transition: var(--tran-05);
+}
+
+.collapsible-data {
+    max-height: 20px;
+    overflow: hidden;
+    position: relative;
+    top: -100%;
+    opacity: 0.5;
+    transition: var(--tran-05);
+}
+
+.activity-data label {
+    z-index: 1;
+}
+
+input:checked ~ .collapsible-data {
+    max-height: 300px;
+    top: 0;
+    padding-bottom: 180px;
+    opacity: 1;
 }
 
 @media (max-width: 1000px) {

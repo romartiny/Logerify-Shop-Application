@@ -1,20 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AdminEventsController;
+use App\Http\Controllers\OrderEventsController;
 
 Route::middleware(['verify.shopify'])->group(function () {
-    Route::get('/', function () {
-        return view('welcome');
-    })->middleware(['verify.shopify'])->name('home');
+    Route::get('/', [DashboardController::class, 'showDashboard'])
+        ->middleware(['verify.shopify'])->name('home');
+    Route::get('/admin-events', [AdminEventsController::class, 'showAdminEvents'])
+        ->middleware(['verify.shopify'])->name('admin-events');
+    Route::get('/order-events', [OrderEventsController::class, 'showOrderEvents'])
+        ->middleware(['verify.shopify'])->name('order-events');
 });

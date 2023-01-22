@@ -164,7 +164,7 @@ return [
     |
     */
 
-    'api_version' => env('SHOPIFY_API_VERSION', '2022-01'),
+    'api_version' => env('SHOPIFY_API_VERSION', 'SHOPIFY_API_VERSION'),
 
     /*
     |--------------------------------------------------------------------------
@@ -205,7 +205,7 @@ return [
     read_products, read_product_listings, read_publications, read_purchase_options, read_reports,
     read_resource_feedbacks, read_script_tags, read_shipping, read_shopify_payments_disputes,
     read_shopify_payments_payouts, read_returns, read_themes, read_translations,
-    read_third_party_fulfillment_orders, read_order_edits'),
+    read_third_party_fulfillment_orders, read_order_edits, read_product_listings	'),
 
     /*
     read_users - shopify plus
