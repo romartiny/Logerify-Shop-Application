@@ -21,11 +21,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href="/assets/css/loader.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
     <title>Logerify | Admin Events</title>
 </head>
 
 <body>
+<div class="loader"></div>
     <nav>
         <div class="logo-name">
             <div class="logo-image">
@@ -48,7 +50,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/order-events">
                         <i class="uil uil-transaction"></i>
                         <span class="link-name">Order Events</span>
                     </a>
@@ -201,6 +203,7 @@
     <script src="/assets/js/searchTable.js"></script>
     <script src="/assets/js/navBar.js"></script>
     <script src="/assets/js/darkMode.js"></script>
+    <script src="/assets/js/loader.js"></script>
 </body>
 
 </html>

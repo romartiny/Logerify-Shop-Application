@@ -134,7 +134,6 @@
                         {{ dd($orderEvents) }}
                         <tbody class="tbody-elem divide-y divide-gray-100" id="log-table">
 {{--                        @foreach($orderEvents as $event)--}}
-{{--                            @if($event['author'] !== 'Shopify' && $event['author'] !== 'Online Store')--}}
 {{--                                <tr class="tr-elem">--}}
 {{--                                    <td class="p-3 text-sm text-gray-700">--}}
 {{--                                        <span class="total-info text-sm text-gray-700">--}}
@@ -159,13 +158,11 @@
 {{--                                        {{ $event['created_at'] }}--}}
 {{--                                    </td>--}}
 {{--                                </tr>--}}
-{{--                            @endif--}}
 {{--                        @endforeach--}}
                         </tbody>
                     </table>
                     <div class="table-mobile flex">
 {{--                    @foreach($orderEvents as $event)--}}
-{{--                            @if($event['author'] !== 'Shopify' && $event['author'] !== 'Online Store')--}}
 {{--                                <div class="mobile-block-box">--}}
 {{--                                    <div class="box-mobile p-4 rounded-lg shadow">--}}
 {{--                                        <div class="box-mobile-info">--}}
@@ -192,7 +189,6 @@
 {{--                                        </div>--}}
 {{--                                    </div>--}}
 {{--                                </div>--}}
-{{--                            @endif--}}
 {{--                    @endforeach--}}
                     </div>
                 </div>
