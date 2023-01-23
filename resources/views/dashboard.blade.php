@@ -198,17 +198,19 @@
                                             {{ $event['verb'] }}
                                         </span>
                                             </div>
-                                            <span class="table-mobile-text text-sm text-gray-700 created-date">
-                                                {{ $event['created_at'] }}
+                                            <span class="table-mobile-text text-sm text-gray-700">
+                                                {{ $event['author'] }}
                                             </span>
                                         </div>
                                         <div class="table-mobile-desc">
-                                            <span class="table-mobile-text text-gray-500">
+                                            <div class="mobile-description-block w-160">
+                                                <span class="table-mobile-text text-gray-500">
                                                 {{ $event['description'] }}
                                             </span>
-                                            <a href="" class="table-mobile-view text-blue-500 font-bold">
-                                                View
-                                            </a>
+                                            </div>
+                                            <span class="table-mobile-text text-sm text-gray-700 created-date">
+                                                {{ $event['created_at'] }}
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -218,11 +220,11 @@
             </div>
         </div>
     </section>
+    <script src="/assets/js/loader.js"></script>
     <script src="/assets/js/onloadScripts.js"></script>
     <script src="/assets/js/searchTable.js"></script>
     <script src="/assets/js/navBar.js"></script>
     <script src="/assets/js/darkMode.js"></script>
-    <script src="/assets/js/loader.js"></script>
 </body>
 
 </html>

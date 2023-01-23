@@ -116,49 +116,53 @@
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-chart"></i>
-                    <span class="text">Admins Activity</span>
+                    <span class="text">Orders Events</span>
                 </div>
                 <div class="activity-data w-screen">
                     <table class="w-full rounded-lg table-plus">
                         <thead class="thead-elem border-b-2">
                             <tr class="title-section">
-                                <th class="title-text w-18 p-3 text-sm font-semibold tracking-wide text-left">Author</th>
-                                <th class="title-text w-16 p-3 text-sm font-semibold tracking-wide text-left">Type</th>
-                                <th class="title-text flex flex content-around flex-wrap flex-col-reverse p-3
-                                text-sm font-semibold tracking-wide text-left">Action</th>
-                                <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">Message</th>
+                                <th class="title-text w-38 p-3 text-sm font-semibold tracking-wide text-left">
+                                    Order Number
+                                </th>
+                                <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">
+                                    Customer
+                                </th>
+                                <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">Payment Amount</th>
                                 <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">Created At</th>
+                                <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">Info</th>
                             </tr>
                         </thead>
 
-                        {{ dd($orderEvents) }}
+{{--                        {{ dd($orderEvents) }}--}}
                         <tbody class="tbody-elem divide-y divide-gray-100" id="log-table">
-{{--                        @foreach($orderEvents as $event)--}}
-{{--                                <tr class="tr-elem">--}}
-{{--                                    <td class="p-3 text-sm text-gray-700">--}}
-{{--                                        <span class="total-info text-sm text-gray-700">--}}
-{{--                                            {{ $event['author'] }}--}}
-{{--                                        </span>--}}
-{{--                                    </td>--}}
-{{--                                    <td class="p-3 text-sm text-gray-700">--}}
-{{--                                        <span class="total-info text-sm text-gray-700">--}}
-{{--                                            {{ $event['subject_type'] }}--}}
-{{--                                        </span>--}}
-{{--                                    </td>--}}
-{{--                                    <td class="p-3 text-sm text-gray-700 flex justify-around">--}}
-{{--                                        <span class="p-1.5 text-xs flex flex-col font-medium uppercase text-center--}}
-{{--                                        tracking-wider rounded-lg bg-opacity-50 recent-type verb-{{$event['verb']}}">--}}
-{{--                                            {{ $event['verb'] }}--}}
-{{--                                        </span>--}}
-{{--                                    </td>--}}
-{{--                                    <td class="total-info p-3 text-sm text-gray-700">--}}
-{{--                                        {{ $event['description'] }}--}}
-{{--                                    </td>--}}
-{{--                                    <td class="total-info p-3 text-sm text-gray-700 created-date">--}}
-{{--                                        {{ $event['created_at'] }}--}}
-{{--                                    </td>--}}
-{{--                                </tr>--}}
-{{--                        @endforeach--}}
+                        @foreach($orderEvents as $event)
+                                <tr class="tr-elem">
+                                    <td class="p-3 text-sm text-gray-700">
+                                        <span class="total-info text-sm text-gray-700">
+                                            {{ $event['number'] }}
+                                        </span>
+                                    </td>
+                                    <td class="p-3 text-sm text-gray-700">
+                                        <span class="total-info text-sm text-gray-700">
+                                            {{ $event['customer']['first_name'] . ' ' . $event['customer']['last_name'] }}
+                                        </span>
+                                    </td>
+                                    <td class="p-3 text-sm text-gray-700">
+                                        <span class="total-info text-sm text-gray-700">
+                                            {{ $event['current_subtotal_price'] . ' ' . $event['currency'] }}
+                                        </span>
+                                    </td>
+                                    <td class="total-info p-3 text-sm text-gray-700 created-date">
+                                        {{ $event['created_at'] }}
+                                    </td>
+                                    <td class="total-info p-3 text-sm text-gray-700">
+                                        <a href="" class="table-mobile-view text-blue-500 font-bold">
+                                            View
+                                        </a>
+                                    </td>
+                                </tr>
+                        @endforeach
                         </tbody>
                     </table>
                     <div class="table-mobile flex">
@@ -195,6 +199,7 @@
             </div>
         </div>
     </section>
+    <script src="/assets/js/loader.js"></script>
     <script src="/assets/js/onloadScripts.js"></script>
     <script src="/assets/js/searchTable.js"></script>
     <script src="/assets/js/navBar.js"></script>

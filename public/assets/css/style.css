@@ -458,6 +458,10 @@ nav.close ~ .dashboard .top {
     background-color: #54adf5;
 }
 
+.verb-confirmed {
+    background-color: #9c54f5;
+}
+
 .modal-window {
     width: 400px;
     height: 400px;
@@ -588,10 +592,12 @@ input:checked ~ .collapsible-data {
 
     .table-mobile-desc {
         display: flex;
-        align-content: space-around;
-        align-items: flex-end;
-        justify-content: space-between;
+        align-content: flex-start;
+        align-items: flex-start;
         padding-top: 10px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: column;
     }
 
     .mobile-block-box {

@@ -25,9 +25,9 @@ class OrderEventsService
 
     public function normalizeShopEvents($shopEvents): array
     {
-//        foreach ($shopEvents as $key => $shopEvent) {
-//            $shopEvents[$key]['created_at'] = date("m/d/Y h:i:s",strtotime($shopEvent['created_at']));
-//        }
+        foreach ($shopEvents as $key => $shopEvent) {
+            $shopEvents[$key]['created_at'] = date("m/d/Y h:i:s",strtotime($shopEvent['created_at']));
+        }
 
         return $shopEvents;
     }
