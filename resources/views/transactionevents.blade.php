@@ -21,11 +21,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href="/assets/css/loader.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
-    <title>Logerify | Order Events</title>
+    <title>Logerify | Transaction Events</title>
 </head>
 
 <body>
+<div class="loader"></div>
     <nav>
         <div class="logo-name">
             <div class="logo-image">
@@ -79,12 +81,6 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="uil uil-info-circle"></i>
-                        <span class="link-name">Info</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
                         <i class="uil uil-question-circle"></i>
                         <span class="link-name">Help</span>
                     </a>
@@ -122,57 +118,55 @@
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-chart"></i>
-                    <span class="text">Order Events</span>
+                    <span class="text">Transaction Activity</span>
                 </div>
                 <div class="activity-data w-screen">
                     <table class="w-full rounded-lg table-plus">
                         <thead class="thead-elem border-b-2">
                             <tr class="title-section">
-                                <th class="title-text w-38 p-3 text-sm font-semibold tracking-wide text-left">
-                                    Customer
-                                </th>
-                                <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">
-                                    Email
-                                </th>
-                                <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">Payment Amount</th>
+                                <th class="title-text w-18 p-3 text-sm font-semibold tracking-wide text-left">Author</th>
+                                <th class="title-text w-16 p-3 text-sm font-semibold tracking-wide text-left">Type</th>
+                                <th class="title-text flex flex content-around flex-wrap flex-col-reverse p-3
+                                text-sm font-semibold tracking-wide text-left">Action</th>
+                                <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">Message</th>
                                 <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">Created At</th>
-                                <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">Info</th>
                             </tr>
                         </thead>
-
-{{--                        {{ dd($orderEvents) }}--}}
+                        {{ dd($transactionEvents) }}
                         <tbody class="tbody-elem divide-y divide-gray-100" id="log-table">
-                        @foreach($orderEvents as $event)
-                                <tr class="tr-elem">
-                                    <td class="p-3 text-sm text-gray-700">
-                                        <span class="total-info text-sm text-gray-700">
-                                            {{ $event['customer']['first_name'] . ' ' . $event['customer']['last_name'] }}
-                                        </span>
-                                    </td>
-                                    <td class="p-3 text-sm text-gray-700">
-                                        <span class="total-info text-sm text-gray-700">
-                                            {{ $event['contact_email'] }}
-                                        </span>
-                                    </td>
-                                    <td class="p-3 text-sm text-gray-700">
-                                        <span class="total-info text-sm text-gray-700">
-                                            {{ $event['current_subtotal_price'] . ' ' . $event['currency'] }}
-                                        </span>
-                                    </td>
-                                    <td class="total-info p-3 text-sm text-gray-700 created-date">
-                                        {{ $event['created_at'] }}
-                                    </td>
-                                    <td class="total-info p-3 text-sm text-gray-700">
-                                        <a href="" class="table-mobile-view text-blue-500 font-bold">
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                        @endforeach
+{{--                        @foreach($productEvents as $event)--}}
+{{--                            @if($event['subject_type'] == 'Product')--}}
+{{--                                <tr class="tr-elem">--}}
+{{--                                    <td class="p-3 text-sm text-gray-700">--}}
+{{--                                        <span class="total-info text-sm text-gray-700">--}}
+{{--                                            {{ $event['author'] }}--}}
+{{--                                        </span>--}}
+{{--                                    </td>--}}
+{{--                                    <td class="p-3 text-sm text-gray-700">--}}
+{{--                                        <span class="total-info text-sm text-gray-700">--}}
+{{--                                            {{ $event['subject_type'] }}--}}
+{{--                                        </span>--}}
+{{--                                    </td>--}}
+{{--                                    <td class="p-3 text-sm text-gray-700 flex justify-around">--}}
+{{--                                        <span class="p-1.5 text-xs flex flex-col font-medium uppercase text-center--}}
+{{--                                        tracking-wider rounded-lg bg-opacity-50 recent-type verb-{{$event['verb']}}">--}}
+{{--                                            {{ $event['verb'] }}--}}
+{{--                                        </span>--}}
+{{--                                    </td>--}}
+{{--                                    <td class="total-info p-3 text-sm text-gray-700">--}}
+{{--                                        {{ $event['description'] }}--}}
+{{--                                    </td>--}}
+{{--                                    <td class="total-info p-3 text-sm text-gray-700 created-date">--}}
+{{--                                        {{ $event['created_at'] }}--}}
+{{--                                    </td>--}}
+{{--                                </tr>--}}
+{{--                            @endif--}}
+{{--                        @endforeach--}}
                         </tbody>
                     </table>
                     <div class="table-mobile flex">
-{{--                    @foreach($orderEvents as $event)--}}
+{{--                    @foreach($productEvents as $event)--}}
+{{--                            @if($event['subject_type'] == 'Product')--}}
 {{--                                <div class="mobile-block-box">--}}
 {{--                                    <div class="box-mobile p-4 rounded-lg shadow">--}}
 {{--                                        <div class="box-mobile-info">--}}
@@ -185,31 +179,34 @@
 {{--                                            {{ $event['verb'] }}--}}
 {{--                                        </span>--}}
 {{--                                            </div>--}}
+{{--                                            <span class="table-mobile-text text-sm text-gray-700">--}}
+{{--                                                {{ $event['author'] }}--}}
+{{--                                            </span>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="table-mobile-desc">--}}
+{{--                                            <div class="mobile-description-block w-160">--}}
+{{--                                                <span class="table-mobile-text text-gray-500">--}}
+{{--                                                {{ $event['description'] }}--}}
+{{--                                            </span>--}}
+{{--                                            </div>--}}
 {{--                                            <span class="table-mobile-text text-sm text-gray-700 created-date">--}}
 {{--                                                {{ $event['created_at'] }}--}}
 {{--                                            </span>--}}
 {{--                                        </div>--}}
-{{--                                        <div class="table-mobile-desc">--}}
-{{--                                            <span class="table-mobile-text text-gray-500">--}}
-{{--                                                {{ $event['description'] }}--}}
-{{--                                            </span>--}}
-{{--                                            <a href="" class="table-mobile-view text-blue-500 font-bold">--}}
-{{--                                                View--}}
-{{--                                            </a>--}}
-{{--                                        </div>--}}
 {{--                                    </div>--}}
 {{--                                </div>--}}
+{{--                            @endif--}}
 {{--                    @endforeach--}}
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <script src="/assets/js/loader.js"></script>
     <script src="/assets/js/onloadScripts.js"></script>
     <script src="/assets/js/searchTable.js"></script>
     <script src="/assets/js/navBar.js"></script>
     <script src="/assets/js/darkMode.js"></script>
+    <script src="/assets/js/loader.js"></script>
 </body>
 
 </html>

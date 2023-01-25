@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link href="/assets/css/loader.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
-    <title>Logerify | Dashboard</title>
+    <title>Logerify | Information</title>
 </head>
 
 <body>
@@ -80,13 +80,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/info">
+                    <a href="#">
                         <i class="uil uil-info-circle"></i>
                         <span class="link-name">Info</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/help">
+                    <a href="#">
                         <i class="uil uil-question-circle"></i>
                         <span class="link-name">Help</span>
                     </a>
@@ -146,82 +146,10 @@
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-chart"></i>
-                    <span class="text">Recent Activity</span>
+                    <span class="text">Shop Information</span>
                 </div>
                 <div class="activity-data w-screen">
-                    <table class="w-full rounded-lg table-plus">
-                        <thead class="thead-elem border-b-2">
-                        <tr class="title-section">
-                            <th class="title-text w-18 p-3 text-sm font-semibold tracking-wide text-left">Author</th>
-                            <th class="title-text w-16 p-3 text-sm font-semibold tracking-wide text-left">Type</th>
-                            <th class="title-text flex flex content-around flex-wrap flex-col-reverse p-3
-                                text-sm font-semibold tracking-wide text-left">Action</th>
-                            <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">Message</th>
-                            <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">Created At</th>
-                        </tr>
-                        </thead>
-                        <tbody class="tbody-elem divide-y divide-gray-100" id="log-table">
-                        @foreach($lastEvents as $event)
-                                <tr class="tr-elem">
-                                    <td class="p-3 text-sm text-gray-700">
-                                        <span class="total-info text-sm text-gray-700">
-                                            {{ $event['author'] }}
-                                        </span>
-                                    </td>
-                                    <td class="p-3 text-sm text-gray-700">
-                                        <span class="total-info text-sm text-gray-700">
-                                            {{ $event['subject_type'] }}
-                                        </span>
-                                    </td>
-                                    <td class="p-3 text-sm text-gray-700 flex justify-around">
-                                        <span class="p-1.5 text-xs flex flex-col font-medium uppercase text-center
-                                        tracking-wider rounded-lg bg-opacity-50
-                                        recent-type verb-{{$event['verb']}}">
-                                            {{ $event['verb'] }}
-                                        </span>
-                                    </td>
-                                    <td class="total-info p-3 text-sm text-gray-700">
-                                        {{ $event['description'] }}
-                                    </td>
-                                    <td class="total-info p-3 text-sm text-gray-700 created-date">
-                                        {{ $event['created_at'] }}
-                                    </td>
-                                </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                    <div class="table-mobile flex">
-                        @foreach($lastEvents as $event)
-                                <div class="mobile-block-box">
-                                    <div class="box-mobile p-4 rounded-lg shadow">
-                                        <div class="box-mobile-info">
-                                            <div class="box-type">
-                                                <span class="table-mobile-text text-gray-500">
-                                            {{ $event['subject_type'] }}
-                                        </span>
-                                                <span class="p-1.5 mx-1.5 text-xs font-medium uppercase text-center tracking-wider
-                                        rounded-lg bg-opacity-50 recent-type verb-{{$event['verb']}}">
-                                            {{ $event['verb'] }}
-                                        </span>
-                                            </div>
-                                            <span class="table-mobile-text text-sm text-gray-700">
-                                                {{ $event['author'] }}
-                                            </span>
-                                        </div>
-                                        <div class="table-mobile-desc">
-                                            <div class="mobile-description-block w-160">
-                                                <span class="table-mobile-text text-gray-500">
-                                                {{ $event['description'] }}
-                                            </span>
-                                            </div>
-                                            <span class="table-mobile-text text-sm text-gray-700 created-date">
-                                                {{ $event['created_at'] }}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                        @endforeach
-                    </div>
+                    {{ dd($info) }}
                 </div>
             </div>
         </div>
