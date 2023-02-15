@@ -125,7 +125,7 @@
                     <span class="text">Order Events</span>
                 </div>
                 <div class="description">
-                    <span class="text">Order Events - information and data on all purchases, returns, and other activities related to items in the store</span>
+                    <span class="text"><span class="main-text">Order Events</span> - information and data on all purchases related to items in the store</span>
                 </div>
                 <div class="activity-data w-screen">
                     <table class="w-full rounded-lg table-plus">
@@ -142,8 +142,6 @@
                                 <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">Info</th>
                             </tr>
                         </thead>
-
-{{--                        {{ dd($orderEvents) }}--}}
                         <tbody class="tbody-elem divide-y divide-gray-100" id="log-table">
                         @foreach($orderEvents as $event)
                                 <tr class="tr-elem">

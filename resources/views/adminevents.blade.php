@@ -120,6 +120,9 @@
                     <i class="uil uil-chart"></i>
                     <span class="text">Admins Activity</span>
                 </div>
+                <div class="description">
+                    <span class="text"><span class="main-text">Admins Events</span> - receive any data on the actions of store administrators</span>
+                </div>
                 <div class="activity-data w-screen">
                     <table class="w-full rounded-lg table-plus">
                         <thead class="thead-elem border-b-2">
@@ -184,7 +187,7 @@
                                         </div>
                                         <div class="table-mobile-desc">
                                             <div class="mobile-description-block w-160">
-                                                <span class="table-mobile-text text-gray-500">
+                                                <span class="table-mobile-text table-mobile-description text-gray-500">
                                                 {{ $event['description'] }}
                                             </span>
                                             </div>

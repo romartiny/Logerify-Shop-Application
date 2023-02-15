@@ -205,7 +205,7 @@
                                         </div>
                                         <div class="table-mobile-desc">
                                             <div class="mobile-description-block w-160">
-                                                <span class="table-mobile-text text-gray-500">
+                                                <span class="table-mobile-text table-mobile-description text-gray-500">
                                                 {{ $event['description'] }}
                                             </span>
                                             </div>
