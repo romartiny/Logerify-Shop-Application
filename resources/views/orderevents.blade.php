@@ -124,6 +124,9 @@
                     <i class="uil uil-chart"></i>
                     <span class="text">Order Events</span>
                 </div>
+                <div class="description">
+                    <span class="text">Order Events - information and data on all purchases, returns, and other activities related to items in the store</span>
+                </div>
                 <div class="activity-data w-screen">
                     <table class="w-full rounded-lg table-plus">
                         <thead class="thead-elem border-b-2">
@@ -186,7 +189,7 @@
                                                 {{ $event['created_at'] }}
                                             </span>
                                     </div>
-                                    <div class="table-mobile-desc">
+                                    <div class="table-mobile-desc-fix">
                                         <div class="mobile-description-block w-160">
                                             <span class="table-mobile-text text-sm text-gray-700">
                                             {{ $event['current_subtotal_price'] . ' ' . $event['currency'] }}

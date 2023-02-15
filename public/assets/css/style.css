@@ -322,8 +322,20 @@ nav.close ~ .dashboard .top {
 
 .dash-content .title {
     display: flex;
-    align-items: center;
     margin: 60px 0 30px 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: center;
+    align-items: center;
+}
+
+.dash-content .description {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
 }
 
 .dash-content .title i {
@@ -344,6 +356,14 @@ nav.close ~ .dashboard .top {
     font-weight: 500;
     color: var(--text-color);
     margin-left: 10px;
+}
+
+.dash-content .description .text {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color);
+    width: 500px;
+    text-align: center;
 }
 
 .dash-content .boxes {
@@ -583,6 +603,16 @@ input:checked ~ .collapsible-data {
         justify-content: space-between;
         flex-wrap: wrap;
         flex-direction: column;
+    }
+
+    .table-mobile-desc-fix {
+        display: flex;
+        padding-top: 10px;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        align-content: stretch;
     }
 
     .mobile-description-block {
