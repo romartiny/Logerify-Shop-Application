@@ -182,15 +182,15 @@
                                             {{ $event['contact_email'] }}
                                         </span>
                                         </div>
-                                        <span class="p-1.5 text-xs font-medium uppercase text-center tracking-wider
-                                        rounded-lg bg-opacity-50 recent-type">
+                                        <span class="table-mobile-text text-sm text-gray-700">
                                                 {{ $event['created_at'] }}
                                             </span>
                                     </div>
                                     <div class="table-mobile-desc-fix">
                                         <div class="mobile-description-block w-160">
-                                            <span class="table-mobile-text text-sm text-gray-700">
-                                            {{ $event['current_subtotal_price'] . ' ' . $event['currency'] }}
+                                            <span class="table-mobile-text p-1.5 text-xs font-medium uppercase
+                                            text-center tracking-wider rounded-lg bg-opacity-50 verb-create">
+                                                {{ $event['current_subtotal_price'] . ' ' . $event['currency'] }}
                                             </span>
                                         </div>
                                         <span class="table-mobile-text text-gray-500">

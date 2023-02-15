@@ -126,6 +126,9 @@
                     <i class="uil uil-chart"></i>
                     <span class="text">Product Activity</span>
                 </div>
+                <div class="description">
+                    <span class="text"><span class="main-text">Product Events</span> - all actions and manipulations related to the goods of the store</span>
+                </div>
                 <div class="activity-data w-screen">
                     <table class="w-full rounded-lg table-plus">
                         <thead class="thead-elem border-b-2">

@@ -632,10 +632,6 @@ input:checked ~ .collapsible-data {
         padding-bottom: 10px;
     }
 
-    .box-mobile:hover {
-        background: #2f2f2f;
-    }
-
     .box-mobile {
         background: var(--box-mobile-color);
     }
