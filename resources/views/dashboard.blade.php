@@ -1,17 +1,3 @@
-{{--@extends('shopify-app::layouts.default')--}}
-
-{{--@section('content')--}}
-{{--    <!-- You are: (shop domain name) -->--}}
-{{--    <p>You are: {{ $shopDomain ?? Auth::user()->name }}</p>--}}
-{{--@endsection--}}
-
-{{--@section('scripts')--}}
-{{--    @parent--}}
-
-{{--    <script>--}}
-{{--        actions.TitleBar.create(app, { title: 'Hiiiii' });--}}
-{{--    </script>--}}
-{{--@endsection--}}
 <html lang="en">
 
 <head>
@@ -27,7 +13,7 @@
 </head>
 
 <body>
-<div class="loader"></div>
+    <div class="loader"></div>
     <nav>
         <div class="logo-name">
             <div class="logo-image">
@@ -80,13 +66,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/info">
+                    <a href="#">
                         <i class="uil uil-info-circle"></i>
                         <span class="link-name">Info</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/help">
+                    <a href="#">
                         <i class="uil uil-question-circle"></i>
                         <span class="link-name">Help</span>
                     </a>
@@ -105,7 +91,6 @@
             </ul>
         </div>
     </nav>
-
     <section class="dashboard">
         <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
@@ -227,10 +212,10 @@
         </div>
     </section>
     <script src="/assets/js/loader.js"></script>
-    <script src="/assets/js/onloadScripts.js"></script>
-    <script src="/assets/js/searchTable.js"></script>
-    <script src="/assets/js/navBar.js"></script>
-    <script src="/assets/js/darkMode.js"></script>
+    <script async src="/assets/js/onloadScripts.js"></script>
+    <script async src="/assets/js/searchTable.js"></script>
+    <script async src="/assets/js/navBar.js"></script>
+    <script async src="/assets/js/darkMode.js"></script>
 </body>
 
 </html>

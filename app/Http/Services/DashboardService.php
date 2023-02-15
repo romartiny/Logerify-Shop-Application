@@ -37,7 +37,7 @@ class DashboardService
         return $this->normalizeNumber($totalEvents['body']['container']['count']);
     }
 
-    public function grabCustomersCount(): string
+    public function grabCustomersCount(): string //need to fix 
     {
         $resourceType = 'customers/count.json';
         $totalCustomersCount = $this->retrieveData($this->getRequestType,

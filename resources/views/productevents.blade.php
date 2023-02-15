@@ -144,6 +144,11 @@
                                 <tr class="tr-elem">
                                     <td class="p-3 text-sm text-gray-700">
                                         <span class="total-info text-sm text-gray-700">
+                                            @if( $event['author'] === 'Shopify')
+                                                <i class="uil uil-store"></i>
+                                            @else
+                                                <i class="uil uil-user"></i>
+                                            @endif
                                             {{ $event['author'] }}
                                         </span>
                                     </td>
@@ -180,6 +185,11 @@
                                         </span>
                                             </div>
                                             <span class="table-mobile-text text-sm text-gray-700">
+                                                @if( $event['author'] === 'Shopify')
+                                                    <i class="uil uil-store"></i>
+                                                @else
+                                                    <i class="uil uil-user"></i>
+                                                @endif
                                                 {{ $event['author'] }}
                                             </span>
                                         </div>
