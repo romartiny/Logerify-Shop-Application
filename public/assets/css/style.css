@@ -578,12 +578,11 @@ input:checked ~ .collapsible-data {
 
     .table-mobile-desc {
         display: flex;
-        align-content: flex-start;
-        align-items: flex-start;
+        align-content: center;
         padding-top: 10px;
         justify-content: space-between;
         flex-wrap: wrap;
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .mobile-block-box {

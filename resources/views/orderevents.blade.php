@@ -172,34 +172,35 @@
                         </tbody>
                     </table>
                     <div class="table-mobile flex">
-{{--                    @foreach($orderEvents as $event)--}}
-{{--                                <div class="mobile-block-box">--}}
-{{--                                    <div class="box-mobile p-4 rounded-lg shadow">--}}
-{{--                                        <div class="box-mobile-info">--}}
-{{--                                            <div class="box-type">--}}
-{{--                                                <span class="table-mobile-text text-gray-500">--}}
-{{--                                            {{ $event['subject_type'] }}--}}
-{{--                                        </span>--}}
-{{--                                                <span class="p-1.5 mx-1.5 text-xs font-medium uppercase text-center tracking-wider--}}
-{{--                                        rounded-lg bg-opacity-50 recent-type verb-{{$event['verb']}}">--}}
-{{--                                            {{ $event['verb'] }}--}}
-{{--                                        </span>--}}
-{{--                                            </div>--}}
-{{--                                            <span class="table-mobile-text text-sm text-gray-700 created-date">--}}
-{{--                                                {{ $event['created_at'] }}--}}
-{{--                                            </span>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="table-mobile-desc">--}}
-{{--                                            <span class="table-mobile-text text-gray-500">--}}
-{{--                                                {{ $event['description'] }}--}}
-{{--                                            </span>--}}
-{{--                                            <a href="" class="table-mobile-view text-blue-500 font-bold">--}}
-{{--                                                View--}}
-{{--                                            </a>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                    @endforeach--}}
+                    @foreach($orderEvents as $event)
+                            <div class="mobile-block-box">
+                                <div class="box-mobile p-4 rounded-lg shadow">
+                                    <div class="box-mobile-info">
+                                        <div class="box-type">
+                                                <span class="table-mobile-text text-gray-500">
+                                            {{ $event['contact_email'] }}
+                                        </span>
+                                        </div>
+                                        <span class="p-1.5 text-xs font-medium uppercase text-center tracking-wider
+                                        rounded-lg bg-opacity-50 recent-type">
+                                                {{ $event['created_at'] }}
+                                            </span>
+                                    </div>
+                                    <div class="table-mobile-desc">
+                                        <div class="mobile-description-block w-160">
+                                            <span class="table-mobile-text text-sm text-gray-700">
+                                            {{ $event['current_subtotal_price'] . ' ' . $event['currency'] }}
+                                            </span>
+                                        </div>
+                                        <span class="table-mobile-text text-gray-500">
+                                                <a href="" class="table-mobile-view text-blue-500 font-bold">
+                                                    View
+                                                </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                    @endforeach
                     </div>
                 </div>
             </div>
