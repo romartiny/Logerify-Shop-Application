@@ -56,7 +56,7 @@
                 </a>
             </li>
             <li>
-                <a href="/product-events">
+                <a class="link-current" href="/product-events">
                     <i class="uil uil-package"></i>
                     <span class="link-name link-name-current">Products</span>
                 </a>

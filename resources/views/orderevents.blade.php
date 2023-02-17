@@ -48,7 +48,7 @@
                 </a>
             </li>
             <li>
-                <a href="/order-events">
+                <a class="link-current" href="/order-events">
                     <i class="uil uil-transaction"></i>
                     <span class="link-name link-name-current">Orders</span>
                 </a>

@@ -86,7 +86,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a class="link-current" href="#">
                     <i class="uil uil-question-circle"></i>
                     <span class="link-name link-name-current">Help</span>
                 </a>

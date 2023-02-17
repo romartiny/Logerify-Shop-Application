@@ -44,7 +44,7 @@
                 </a>
             </li>
             <li>
-                <a href="/admin-events">
+                <a class="link-current" href="/admin-events">
                     <i class="uil uil-head-side-mask"></i>
                     <span class="link-name link-name-current">Admins</span>
                 </a>

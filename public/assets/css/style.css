@@ -173,10 +173,9 @@ body.dark li a:hover:before {
     color: var(--text-color-rever);
 }
 
-/*.nav-links li a,*/
-/*.nav-links li .link-name-current {*/
-/*    color: var(--primary-color);*/
-/*}*/
+.menu-items li .link-current i {
+    color: var(--text-color-rever);
+}
 
 nav.close li a .link-name {
     opacity: 0;

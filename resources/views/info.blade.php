@@ -80,7 +80,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a class="link-current" href="#">
                     <i class="uil uil-info-circle"></i>
                     <span class="link-name link-name-current">Info</span>
                 </a>
