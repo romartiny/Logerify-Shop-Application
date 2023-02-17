@@ -169,6 +169,10 @@ body.dark li a:hover:before {
     white-space: nowrap;
 }
 
+.menu-items li a .link-name-current {
+    color: var(--text-color-rever);
+}
+
 nav.close li a .link-name {
     opacity: 0;
     pointer-events: none;

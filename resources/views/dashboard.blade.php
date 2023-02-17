@@ -26,7 +26,7 @@
                 <li>
                     <a href="/">
                         <i class="uil uil-estate"></i>
-                        <span class="link-name">Dashboard</span>
+                        <span class="link-name link-name-current">Dashboard</span>
                     </a>
                 </li>
                 <li>
