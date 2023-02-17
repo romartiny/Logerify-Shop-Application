@@ -24,7 +24,7 @@
         <div class="menu-items">
             <ul class="nav-links">
                 <li>
-                    <a href="/">
+                    <a class="link-current" href="/">
                         <i class="uil uil-estate"></i>
                         <span class="link-name link-name-current">Dashboard</span>
                     </a>
