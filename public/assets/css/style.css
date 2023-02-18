@@ -563,8 +563,18 @@ input:checked ~ .collapsible-data {
         pointer-events: none;
     }
 
+    nav .uil-moon {
+        opacity: 1;
+        pointer-events: none;
+    }
+
     nav.close li a .link-name {
         opacity: 1;
+        pointer-events: auto;
+    }
+
+    nav.close .uil-moon {
+        opacity: 0;
         pointer-events: auto;
     }
 

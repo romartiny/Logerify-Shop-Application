@@ -66,13 +66,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/info">
                         <i class="uil uil-info-circle"></i>
                         <span class="link-name">Info</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/help">
                         <i class="uil uil-question-circle"></i>
                         <span class="link-name">Help</span>
                     </a>
