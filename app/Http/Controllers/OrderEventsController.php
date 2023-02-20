@@ -26,7 +26,7 @@ class OrderEventsController extends Controller
 
     public function showOrderEvents(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        return view('orderevents', [
+        return view('orderEvents', [
             'orderEvents' => $this->getAllEvents()
         ]);
     }

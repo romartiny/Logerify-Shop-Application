@@ -26,7 +26,7 @@ class AdminEventsController extends Controller
 
     public function showAdminEvents(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        return view('adminevents', [
+        return view('adminEvents', [
             'allEvents' => $this->getAllEvents()
         ]);
     }

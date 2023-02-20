@@ -15,8 +15,6 @@ class ResponseRepository
         $this->API_ADMIN_VERSION = $versionController;
     }
 
-
-
     public function getShopifyResponse($requestType ,$shopifyData, $resourceType)
     {
         return $shopifyData->api()
