@@ -170,6 +170,12 @@ body.dark li a:hover:before {
     white-space: nowrap;
 }
 
+.uil-moon {
+    opacity: 1;
+    pointer-events: auto;
+    transition: var(--tran-05);
+}
+
 .menu-items li a .link-name-current {
     color: var(--text-color-rever);
 }
@@ -183,14 +189,7 @@ nav.close li a .link-name {
     pointer-events: none;
 }
 
-nav .logout-mod .uil {
-    opacity: 0;
-    pointer-events: none;
-    transition: var(--tran-05);
-}
-
-nav.close .logout-mod .uil {
-    opacity: 1;
+nav.close .logout-mod .uil-moon {
     pointer-events: none;
     transition: var(--tran-05);
 }
@@ -572,7 +571,7 @@ input:checked ~ .collapsible-data {
     }
 
     nav .uil-moon {
-        opacity: 1;
+        opacity: 0;
         pointer-events: none;
     }
 
@@ -581,8 +580,8 @@ input:checked ~ .collapsible-data {
         pointer-events: auto;
     }
 
-    nav.close .uil-moon {
-        opacity: 0;
+    nav.close li i {
+        opacity: 1;
         pointer-events: auto;
     }
 
@@ -720,14 +719,29 @@ input:checked ~ .collapsible-data {
         pointer-events: none;
     }
 
+    nav.close .uil-moon {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
     nav li a .link-name {
         opacity: 0;
         pointer-events: none;
     }
 
+    nav li i {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
     nav.close li a .link-name {
         opacity: 0;
         pointer-events: none;
+    }
+
+    nav.close li i {
+        opacity: 0;
+        pointer-events: auto;
     }
 
     nav ~ .dashboard {
