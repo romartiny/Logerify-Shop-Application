@@ -32,31 +32,31 @@
                 <li>
                     <a href="/admin-events">
                         <i class="uil uil-head-side-mask"></i>
-                        <span class="link-name">Admin Events</span>
+                        <span class="link-name">Admin</span>
                     </a>
                 </li>
                 <li>
                     <a href="/order-events">
                         <i class="uil uil-transaction"></i>
-                        <span class="link-name">Order Events</span>
+                        <span class="link-name">Order</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <i class="uil uil-package"></i>
-                        <span class="link-name">Product Events</span>
+                        <span class="link-name">Product</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <i class="uil uil-money-bill-stack"></i>
-                        <span class="link-name">Payment Events</span>
+                        <span class="link-name">Payment</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <i class="uil uil-percentage"></i>
-                        <span class="link-name">Discount Info</span>
+                        <span class="link-name">Discount</span>
                     </a>
                 </li>
                 <li>

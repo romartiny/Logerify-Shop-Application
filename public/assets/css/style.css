@@ -303,9 +303,13 @@ nav.close ~ .dashboard .top {
     margin: 0 30px;
 }
 
+.shop-name {
+    transition: var(--tran-05);
+}
+
 .shop-name:hover {
     color: var(--text-color-rever);
-    transition: 1s;
+    transition: var(--tran-05);
     cursor: default;
 }
 
@@ -314,13 +318,19 @@ nav.close ~ .dashboard .top {
     border: 1px solid var(--border-color);
     background-color: var(--panel-color);
     padding: 0 25px 0 50px;
-    border-radius: 5px;
+    border-radius: 15px;
     height: 100%;
     width: 100%;
     color: var(--text-color);
     font-size: 15px;
     font-weight: 400;
     outline: none;
+    transition: var(--tran-05);
+}
+
+.top .search-box input:hover {
+    border: 1px solid #a8a8a8;
+    transition: var(--tran-05);
 }
 
 .top .search-box i {
@@ -348,7 +358,7 @@ nav.close ~ .dashboard .top {
     flex-wrap: wrap;
     align-content: flex-end;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .dash-content .description {
