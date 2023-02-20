@@ -31,6 +31,7 @@
         <div class="logo-image">
             <img src="/assets/picture/logo.png" alt="logerify logo">
         </div>
+<<<<<<< HEAD
         <span class="logo_name">Logerify</span>
     </div>
     <div class="menu-items">
@@ -103,6 +104,72 @@
         </ul>
     </div>
 </nav>
+=======
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li>
+                    <a href="/">
+                        <i class="uil uil-estate"></i>
+                        <span class="link-name">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin-events">
+                        <i class="uil uil-head-side-mask"></i>
+                        <span class="link-name">Admin Events</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="uil uil-transaction"></i>
+                        <span class="link-name">Order Events</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="uil uil-package"></i>
+                        <span class="link-name">Product Events</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="uil uil-money-bill-stack"></i>
+                        <span class="link-name">Payment Events</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="uil uil-percentage"></i>
+                        <span class="link-name">Discount Info</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="uil uil-export"></i>
+                        <span class="link-name">Export</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="uil uil-question-circle"></i>
+                        <span class="link-name">Help</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="logout-mod">
+                <li class="mode">
+                    <a class="dark-mode" href="#">
+                        <i class="uil uil-moon"></i>
+                        <span class="link-name">Dark Mode</span>
+                    </a>
+                    <div class="mode-toggle">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+>>>>>>> parent of f2153c3 (add product and transaction pages + logic)
 
     <section class="dashboard">
 
@@ -122,7 +189,7 @@
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-chart"></i>
-                    <span class="text">Order Events</span>
+                    <span class="text">Orders Events</span>
                 </div>
                 <div class="description">
                     <span class="text"><span class="main-text">Order Events</span> - information and data on all purchases related to items in the store</span>
@@ -132,10 +199,10 @@
                         <thead class="thead-elem border-b-2">
                             <tr class="title-section">
                                 <th class="title-text w-38 p-3 text-sm font-semibold tracking-wide text-left">
-                                    Customer
+                                    Order Number
                                 </th>
                                 <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">
-                                    Email
+                                    Customer
                                 </th>
                                 <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">Payment Amount</th>
                                 <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">Created At</th>
@@ -147,12 +214,12 @@
                                 <tr class="tr-elem">
                                     <td class="p-3 text-sm text-gray-700">
                                         <span class="total-info text-sm text-gray-700">
-                                            {{ $event['customer']['first_name'] . ' ' . $event['customer']['last_name'] }}
+                                            {{ $event['number'] }}
                                         </span>
                                     </td>
                                     <td class="p-3 text-sm text-gray-700">
                                         <span class="total-info text-sm text-gray-700">
-                                            {{ $event['contact_email'] }}
+                                            {{ $event['customer']['first_name'] . ' ' . $event['customer']['last_name'] }}
                                         </span>
                                     </td>
                                     <td class="p-3 text-sm text-gray-700">

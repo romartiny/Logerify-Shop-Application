@@ -510,6 +510,24 @@ nav.close ~ .dashboard .top {
 .verb-confirmed {
     background-color: #9c54f5;
 }
+
+.modal-window {
+    width: 400px;
+    height: 400px;
+    margin:0 auto;
+    display:table;
+    position: absolute;
+    left: 0;
+    right:0;
+    top: 50%;
+    -webkit-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    -o-transform:translateY(-50%);
+    transform:translateY(-50%);
+    transition: var(--tran-05);
+}
+
 .hidden {
     display: none;
     transition: var(--tran-05);
@@ -526,10 +544,6 @@ nav.close ~ .dashboard .top {
 
 .activity-data label {
     z-index: 1;
-}
-
-.text-info {
-    color: var(--text-color);
 }
 
 input:checked ~ .collapsible-data {

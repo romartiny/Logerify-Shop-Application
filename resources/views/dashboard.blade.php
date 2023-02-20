@@ -32,31 +32,31 @@
                 <li>
                     <a href="/admin-events">
                         <i class="uil uil-head-side-mask"></i>
-                        <span class="link-name">Admins</span>
+                        <span class="link-name">Admin Events</span>
                     </a>
                 </li>
                 <li>
                     <a href="/order-events">
                         <i class="uil uil-transaction"></i>
-                        <span class="link-name">Orders</span>
+                        <span class="link-name">Order Events</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/product-events">
+                    <a href="#">
                         <i class="uil uil-package"></i>
-                        <span class="link-name">Products</span>
+                        <span class="link-name">Product Events</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/transaction-events">
+                    <a href="#">
                         <i class="uil uil-money-bill-stack"></i>
-                        <span class="link-name">Transactions</span>
+                        <span class="link-name">Payment Events</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <i class="uil uil-percentage"></i>
-                        <span class="link-name">Discounts</span>
+                        <span class="link-name">Discount Info</span>
                     </a>
                 </li>
                 <li>
@@ -66,13 +66,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/info">
-                        <i class="uil uil-info-circle"></i>
-                        <span class="link-name">Info</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/help">
+                    <a href="#">
                         <i class="uil uil-question-circle"></i>
                         <span class="link-name">Help</span>
                     </a>
