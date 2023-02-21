@@ -120,9 +120,28 @@
 
     <div class="dash-content">
         <div class="activity">
-            <div class="title">
-                <i class="uil uil-chart"></i>
-                <span class="text">Orders Events</span>
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-chart"></i>
+                    <span class="text">Orders Events</span>
+                </div>
+                <div class="boxes">
+                    <div class="box box1">
+                        <i class="uil uil-clock"></i>
+                        <span class="number">14</span>
+                        <span class="text">For 24 hours</span>
+                    </div>
+                    <div class="box box2">
+                        <i class="uil uil-clock-three"></i>
+                        <span class="number">66</span>
+                        <span class="text">For 72 hours</span>
+                    </div>
+                    <div class="box box3">
+                        <i class="uil uil-clock-five"></i>
+                        <span class="number">377</span>
+                        <span class="text">For 1 week</span>
+                    </div>
+                </div>
             </div>
             <div class="description">
                 <span class="text"><span class="main-text">Order Events</span> - information and data on all purchases related to items in the store</span>
@@ -196,7 +215,8 @@
                                 <div class="table-mobile-desc-fix">
                                     <div class="mobile-description-block w-160">
                                             <span class="table-mobile-text p-1.5 text-xs font-medium uppercase
-                                            text-center tracking-wider rounded-lg bg-opacity-50 verb-create">
+                                            text-center tracking-wider rounded-lg bg-opacity-50
+                                            verb-create">
                                                 {{ $event['current_subtotal_price'] . ' ' . $event['currency'] }}
                                             </span>
                                     </div>
