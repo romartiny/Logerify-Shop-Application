@@ -121,8 +121,8 @@
         <div class="activity">
             <div class="overview">
                 <div class="title">
-                    <i class="uil uil-chart"></i>
-                    <span class="text">Orders Events</span>
+                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <span class="text">Orders Dashboard</span>
                 </div>
                 <div class="boxes">
                     <div class="box box1">
@@ -142,8 +142,9 @@
                     </div>
                 </div>
             </div>
-            <div class="description">
-                <span class="text"><span class="main-text">Order Events</span> - information and data on all purchases related to items in the store</span>
+            <div class="title">
+                <i class="uil uil-chart"></i>
+                <span class="text">Orders Events</span>
             </div>
             <div class="activity-data w-screen">
                 <table class="w-full rounded-lg table-plus">
@@ -168,6 +169,7 @@
                         <tr class="tr-elem">
                             <td class="p-3 text-sm text-gray-700">
                                         <span class="total-info text-sm text-gray-700">
+                                            <i class="uil uil-envelope"></i>
                                             {{ $event['contact_email'] ? $event['contact_email'] : 'Hidden'}}
                                         </span>
                             </td>
