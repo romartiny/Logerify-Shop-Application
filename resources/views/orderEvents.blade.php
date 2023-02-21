@@ -26,83 +26,80 @@
 </head>
 
 <body>
-    <nav>
-        <div class="logo-name">
-            <div class="logo-image">
-                <img src="/assets/picture/logo.png" alt="logerify logo">
-            </div>
-            <span class="logo_name">Logerify</span>
+<nav>
+
+    <div class="logo-name">
+        <div class="logo-image">
+            <img src="/assets/picture/logo.png" alt="logerify logo">
         </div>
-        <div class="menu-items">
-            <ul class="nav-links">
-                <li>
-                    <a href="/">
-                        <i class="uil uil-estate"></i>
-                        <span class="link-name">Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/admin-events">
-                        <i class="uil uil-head-side-mask"></i>
-                        <span class="link-name">Admins</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="link-current" href="/order-events">
-                        <i class="uil uil-transaction"></i>
-                        <span class="link-name link-name-current">Orders</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/product-events">
-                        <i class="uil uil-package"></i>
-                        <span class="link-name">Products</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/transaction-events">
-                        <i class="uil uil-money-bill-stack"></i>
-                        <span class="link-name">Transactions</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="uil uil-percentage"></i>
-                        <span class="link-name">Discounts</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="uil uil-export"></i>
-                        <span class="link-name">Export</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/info">
-                        <i class="uil uil-info-circle"></i>
-                        <span class="link-name">Info</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/help">
-                        <i class="uil uil-question-circle"></i>
-                        <span class="link-name">Help</span>
-                    </a>
-                </li>
-            </ul>
-            <ul class="logout-mod">
-                <li class="mode">
-                    <a class="dark-mode" href="#">
-                        <i class="uil uil-moon"></i>
-                        <span class="link-name">Dark Mode</span>
-                    </a>
-                    <div class="mode-toggle">
-                        <span class="switch"></span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+        <span class="logo_name">Logerify</span>
+    </div>
+
+    <div class="menu-items">
+        <ul class="nav-links">
+            <li>
+                <a class="link-current" href="/">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name link-name-current">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin-events">
+                    <i class="uil uil-head-side-mask"></i>
+                    <span class="link-name">Admin</span>
+                </a>
+            </li>
+            <li>
+                <a href="/order-events">
+                    <i class="uil uil-transaction"></i>
+                    <span class="link-name">Order</span>
+                </a>
+            </li>
+            <li>
+                <a href="/product-events">
+                    <i class="uil uil-package"></i>
+                    <span class="link-name">Product</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="uil uil-money-bill-stack"></i>
+                    <span class="link-name">Payment</span>
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    <i class="uil uil-percentage"></i>
+                    <span class="link-name">Discount</span>
+                </a>
+            </li>
+            <li>
+                <a href="/export">
+                    <i class="uil uil-export"></i>
+                    <span class="link-name">Export</span>
+                </a>
+            </li>
+            <li>
+                <a href="/help">
+                    <i class="uil uil-question-circle"></i>
+                    <span class="link-name">Help</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="logout-mod">
+            <li class="mode">
+                <a class="dark-mode" href="#">
+                    <i class="uil uil-moon"></i>
+                    <span class="link-name">Dark Mode</span>
+                </a>
+                <div class="mode-toggle">
+                    <span class="switch"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</nav>
 
 <section class="dashboard">
 
@@ -128,17 +125,17 @@
                     <div class="box box1">
                         <i class="uil uil-clock-three"></i>
                         <span class="number">{{$todayOrders}}</span>
-                        <span class="text">Orders for 24 hours</span>
+                        <span class="text">events for 24 hours</span>
                     </div>
                     <div class="box box2">
                         <i class="uil uil-clock"></i>
                         <span class="number">{{$threeDayOrders}}</span>
-                        <span class="text">Orders for 3 days</span>
+                        <span class="text">events for 3 days</span>
                     </div>
                     <div class="box box3">
                         <i class="uil uil-clock-five"></i>
                         <span class="number">{{$monthOrders}}</span>
-                        <span class="text">Orders for 1 month</span>
+                        <span class="text">events for 1 month</span>
                     </div>
                 </div>
             </div>
@@ -163,7 +160,6 @@
                     </tr>
                     </thead>
 
-{{--                    {{dd($orderEvents)}}--}}
                     <tbody class="tbody-elem divide-y divide-gray-100" id="log-table">
                     @foreach($orderEvents as $event)
                         <tr class="tr-elem">

@@ -24,9 +24,27 @@ class AdminEventsController extends Controller
         return $this->_adminEventsService->grabAdminEvents();
     }
 
+    public function getTodayCountOrders(): int
+    {
+        return $this->_adminEventsService->grabDayAdminEvents();
+    }
+
+    public function getThreeDayCountOrders(): int
+    {
+        return $this->_adminEventsService->grabThreeDayAdminEvents();
+    }
+
+    public function getMonthOrderEvents(): int
+    {
+        return $this->_adminEventsService->grabMonthAdminEvents();
+    }
+
     public function showAdminEvents(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         return view('adminEvents', [
+            'todayAdminEvents' => $this->getTodayCountOrders(),
+            'threeDayAdminEvents' => $this->getThreeDayCountOrders(),
+            'monthAdminEvents' => $this->getMonthOrderEvents(),
             'allEvents' => $this->getAllEvents()
         ]);
     }
