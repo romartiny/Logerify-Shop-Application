@@ -41,7 +41,7 @@ class OrderEventsService
         return $this->normalizeShopEvents(array_reverse($shopEvents['body']['container']['orders']));
     }
 
-    public function grabDayOrderEvents()
+    public function grabDayOrderEvents(): int
     {
         $todayOrders = 0;
         foreach ($this->grabOrderEvents() as $order) {
@@ -50,5 +50,17 @@ class OrderEventsService
             }
         }
         return $todayOrders;
+    }
+
+    public function grabThreeDayOrderEvents(): int
+    {
+        $threeDayOrders = 0;
+        $todayDate = strtotime(date('m/d/Y'));
+        foreach ($this->grabOrderEvents() as $order) {
+            if (date("m/d/Y",strtotime($order['created_at'])) > date("m/d/Y", strtotime($todayDate, 5))) {
+                $threeDayOrders += 1;
+            }
+        }
+        return $threeDayOrders;
     }
 }

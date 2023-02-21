@@ -118,7 +118,7 @@
         <span class="shop-name">{{ $shopDomain ?? Auth::user()->name }}</span>
     </div>
 {{--    {{dd($orderEvents)}}--}}
-{{--    {{dd($todayOrders)}}--}}
+    {{dd($threeDayOrders)}}
     <div class="dash-content">
         <div class="activity">
             <div class="overview">
