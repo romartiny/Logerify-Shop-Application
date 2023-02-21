@@ -57,7 +57,7 @@ class OrderEventsService
         $threeDayOrders = 0;
         $todayDate = strtotime(date('m/d/Y'));
         foreach ($this->grabOrderEvents() as $order) {
-            if (date("m/d/Y",strtotime($order['created_at'])) > date("m/d/Y", strtotime($todayDate, 5))) {
+            if (date("m/d/Y",strtotime($order['created_at'])) > date("m/d/Y", strtotime(' - 3 days'))) {
                 $threeDayOrders += 1;
             }
         }

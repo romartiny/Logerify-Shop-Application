@@ -118,7 +118,7 @@
         <span class="shop-name">{{ $shopDomain ?? Auth::user()->name }}</span>
     </div>
 {{--    {{dd($orderEvents)}}--}}
-    {{dd($threeDayOrders)}}
+{{--    {{dd()}}--}}
     <div class="dash-content">
         <div class="activity">
             <div class="overview">
@@ -134,7 +134,7 @@
                     </div>
                     <div class="box box2">
                         <i class="uil uil-clock"></i>
-                        <span class="number">12</span>
+                        <span class="number">{{$threeDayOrders}}</span>
                         <span class="text">For 72 hours</span>
                     </div>
                     <div class="box box3">
