@@ -34,11 +34,17 @@ class OrderEventsController extends Controller
         return $this->_orderEventsService->grabThreeDayOrderEvents();
     }
 
+    public function getMonthOrderEvents(): int
+    {
+        return $this->_orderEventsService->grabMonthOrderEvents();
+    }
+
     public function showOrderEvents(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         return view('orderEvents', [
             'todayOrders' => $this->getTodayCountOrders(),
             'threeDayOrders' => $this->getThreeDayCountOrders(),
+            'monthOrders' => $this->getMonthOrderEvents(),
             'orderEvents' => $this->getAllEvents()
         ]);
     }

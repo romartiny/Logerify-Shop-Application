@@ -117,8 +117,6 @@
         </div>
         <span class="shop-name">{{ $shopDomain ?? Auth::user()->name }}</span>
     </div>
-{{--    {{dd($orderEvents)}}--}}
-{{--    {{dd()}}--}}
     <div class="dash-content">
         <div class="activity">
             <div class="overview">
@@ -135,12 +133,12 @@
                     <div class="box box2">
                         <i class="uil uil-clock"></i>
                         <span class="number">{{$threeDayOrders}}</span>
-                        <span class="text">For 72 hours</span>
+                        <span class="text">Orders for 3 days</span>
                     </div>
                     <div class="box box3">
                         <i class="uil uil-clock-five"></i>
-                        <span class="number">377</span>
-                        <span class="text">For 1 week</span>
+                        <span class="number">{{$monthOrders}}</span>
+                        <span class="text">Orders for 1 month</span>
                     </div>
                 </div>
             </div>

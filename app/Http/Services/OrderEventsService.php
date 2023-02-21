@@ -55,12 +55,22 @@ class OrderEventsService
     public function grabThreeDayOrderEvents(): int
     {
         $threeDayOrders = 0;
-        $todayDate = strtotime(date('m/d/Y'));
         foreach ($this->grabOrderEvents() as $order) {
             if (date("m/d/Y",strtotime($order['created_at'])) > date("m/d/Y", strtotime(' - 3 days'))) {
                 $threeDayOrders += 1;
             }
         }
         return $threeDayOrders;
+    }
+
+    public function grabMonthOrderEvents(): int
+    {
+        $monthOrders = 0;
+        foreach ($this->grabOrderEvents() as $order) {
+            if (date("m/d/Y",strtotime($order['created_at'])) > date("m/d/Y", strtotime(' - 30 days'))) {
+                $monthOrders += 1;
+            }
+        }
+        return $monthOrders;
     }
 }
