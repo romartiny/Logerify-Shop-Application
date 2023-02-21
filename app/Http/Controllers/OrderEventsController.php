@@ -24,9 +24,15 @@ class OrderEventsController extends Controller
         return $this->_orderEventsService->grabOrderEvents();
     }
 
+    public function getTodayCountOrders()
+    {
+        return $this->_orderEventsService->grabDayOrderEvents();
+    }
+
     public function showOrderEvents(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         return view('orderEvents', [
+            'todayOrders' => $this->getTodayCountOrders(),
             'orderEvents' => $this->getAllEvents()
         ]);
     }

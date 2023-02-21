@@ -40,4 +40,15 @@ class OrderEventsService
 
         return $this->normalizeShopEvents(array_reverse($shopEvents['body']['container']['orders']));
     }
+
+    public function grabDayOrderEvents()
+    {
+        $todayOrders = 0;
+        foreach ($this->grabOrderEvents() as $order) {
+            if (date("m/d/Y",strtotime($order['created_at'])) == date("m/d/Y")) {
+                $todayOrders += 1;
+            }
+        }
+        return $todayOrders;
+    }
 }
