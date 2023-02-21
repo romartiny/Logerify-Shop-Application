@@ -38,7 +38,7 @@ class OrderEventsService
         $shopEvents = $this->retrieveData($this->getRequestType,
             $this->_authInformation->authorizedUser(), $resourceType);
 
-        return $this->normalizeShopEvents(array_reverse($shopEvents['body']['container']['orders']));
+        return $this->normalizeShopEvents($shopEvents['body']['container']['orders']);
     }
 
     public function grabDayOrderEvents(): int
