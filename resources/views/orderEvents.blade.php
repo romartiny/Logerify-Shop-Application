@@ -78,13 +78,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/info">
                         <i class="uil uil-info-circle"></i>
                         <span class="link-name">Info</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/help">
                         <i class="uil uil-question-circle"></i>
                         <span class="link-name">Help</span>
                     </a>
@@ -132,27 +132,34 @@
                     <thead class="thead-elem border-b-2">
                     <tr class="title-section">
                         <th class="title-text w-38 p-3 text-sm font-semibold tracking-wide text-left">
-                            Order Number
+                            Email
                         </th>
-                        <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">
-                            Customer
+                        <th class="title-text flex flex content-around flex-wrap flex-col-reverse p-3
+                        text-sm font-semibold tracking-wide text-left">
+                            Status
                         </th>
                         <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">Payment Amount</th>
                         <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">Created At</th>
                         <th class="title-text p-3 text-sm font-semibold tracking-wide text-left">Info</th>
                     </tr>
                     </thead>
+
+{{--                    {{dd($orderEvents)}}--}}
                     <tbody class="tbody-elem divide-y divide-gray-100" id="log-table">
                     @foreach($orderEvents as $event)
                         <tr class="tr-elem">
                             <td class="p-3 text-sm text-gray-700">
                                         <span class="total-info text-sm text-gray-700">
-                                            {{ $event['number'] }}
+                                            {{ $event['contact_email'] ? $event['contact_email'] : 'Hidden'}}
                                         </span>
                             </td>
-                            <td class="p-3 text-sm text-gray-700">
-                                        <span class="total-info text-sm text-gray-700">
-                                            {{ $event['customer']['first_name'] . ' ' . $event['customer']['last_name'] }}
+                            <td class="p-3 text-sm text-gray-700 flex justify-around">
+                                        <span class="total-info text-sm text-gray-700 p-1.5 text-xs
+                                        flex-col font-medium uppercase text-center
+                                        tracking-wider rounded-lg bg-opacity-50
+                                        recent-type
+                                        status-{{ $event['financial_status'] }}">
+                                            {{ ucfirst($event['financial_status']) }}
                                         </span>
                             </td>
                             <td class="p-3 text-sm text-gray-700">

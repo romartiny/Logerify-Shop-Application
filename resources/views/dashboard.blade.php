@@ -42,7 +42,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/product-events">
                         <i class="uil uil-package"></i>
                         <span class="link-name">Product</span>
                     </a>
@@ -54,19 +54,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/">
                         <i class="uil uil-percentage"></i>
                         <span class="link-name">Discount</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/export">
                         <i class="uil uil-export"></i>
                         <span class="link-name">Export</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/help">
                         <i class="uil uil-question-circle"></i>
                         <span class="link-name">Help</span>
                     </a>

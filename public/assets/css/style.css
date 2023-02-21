@@ -547,6 +547,10 @@ input:checked ~ .collapsible-data {
     opacity: 1;
 }
 
+.status-paid {
+
+}
+
 @media (max-width: 1000px) {
     nav {
         width: 73px;
@@ -658,8 +662,7 @@ input:checked ~ .collapsible-data {
         justify-content: space-between;
         flex-wrap: nowrap;
         flex-direction: row;
-        align-items: center;
-        align-content: stretch;
+        align-items: flex-end;
     }
 
     .mobile-description-block {
