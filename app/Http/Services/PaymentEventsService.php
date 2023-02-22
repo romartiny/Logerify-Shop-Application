@@ -32,9 +32,9 @@ class PaymentEventsService
         return $shopEvents;
     }
 
-    public function grabTransactionEvents(): array
+    public function grabPayoutEvents(): array
     {
-        $resourceType = 'transactions.json';
+        $resourceType = 'shopify_payments/payouts.json';
         $shopEvents = $this->retrieveData($this->getRequestType,
             $this->_authInformation->authorizedUser(), $resourceType);
 

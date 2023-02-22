@@ -62,7 +62,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/payment-events">
                         <i class="uil uil-money-bill-stack"></i>
                         <span class="link-name">Payment</span>
                     </a>
@@ -77,6 +77,12 @@
                     <a href="/export">
                         <i class="uil uil-export"></i>
                         <span class="link-name">Export</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/info">
+                        <i class="uil uil-info-circle"></i>
+                        <span class="link-name">Info</span>
                     </a>
                 </li>
                 <li>

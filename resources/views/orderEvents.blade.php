@@ -38,9 +38,9 @@
     <div class="menu-items">
         <ul class="nav-links">
             <li>
-                <a class="link-current" href="/">
+                <a href="/">
                     <i class="uil uil-estate"></i>
-                    <span class="link-name link-name-current">Dashboard</span>
+                    <span class="link-name">Dashboard</span>
                 </a>
             </li>
             <li>
@@ -50,9 +50,9 @@
                 </a>
             </li>
             <li>
-                <a href="/order-events">
+                <a class="link-current" href="/order-events">
                     <i class="uil uil-transaction"></i>
-                    <span class="link-name">Order</span>
+                    <span class="link-name link-name-current">Order</span>
                 </a>
             </li>
             <li>

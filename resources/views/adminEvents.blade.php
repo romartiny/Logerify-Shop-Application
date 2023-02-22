@@ -38,15 +38,15 @@
     <div class="menu-items">
         <ul class="nav-links">
             <li>
-                <a class="link-current" href="/">
+                <a href="/">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="/admin-events link-name-current">
+                <a class="link-current" href="/admin-events">
                     <i class="uil uil-head-side-mask"></i>
-                    <span class="link-name">Admin</span>
+                    <span class="link-name link-name-current">Admin</span>
                 </a>
             </li>
             <li>
@@ -77,6 +77,12 @@
                 <a href="/export">
                     <i class="uil uil-export"></i>
                     <span class="link-name">Export</span>
+                </a>
+            </li>
+            <li>
+                <a href="/info">
+                    <i class="uil uil-info-circle"></i>
+                    <span class="link-name">Info</span>
                 </a>
             </li>
             <li>

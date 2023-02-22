@@ -21,7 +21,7 @@ class PaymentEventsController extends Controller
 
     public function getAllEvents(): array
     {
-        return $this->_transactionEventsService->grabTransactionEvents();
+        return $this->_transactionEventsService->grabPayoutEvents();
     }
 
     public function showTransactionEvents(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application

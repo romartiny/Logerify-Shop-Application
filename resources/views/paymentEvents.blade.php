@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link href="/assets/css/loader.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
-    <title>Logerify | Transaction Events</title>
+    <title>Logerify | Payment Events</title>
 </head>
 
 <body>
@@ -62,9 +62,9 @@
                 </a>
             </li>
             <li>
-                <a href="/transaction-events">
+                <a class="link-current" href="/transaction-events">
                     <i class="uil uil-money-bill-stack"></i>
-                    <span class="link-name">Transactions</span>
+                    <span class="link-name link-name-current">Payment</span>
                 </a>
             </li>
             <li>

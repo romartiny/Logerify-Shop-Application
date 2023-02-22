@@ -40,9 +40,9 @@
     <div class="menu-items">
         <ul class="nav-links">
             <li>
-                <a class="link-current" href="/">
+                <a href="/">
                     <i class="uil uil-estate"></i>
-                    <span class="link-name link-name-current">Dashboard</span>
+                    <span class="link-name">Dashboard</span>
                 </a>
             </li>
             <li>
@@ -79,6 +79,12 @@
                 <a href="/export">
                     <i class="uil uil-export"></i>
                     <span class="link-name">Export</span>
+                </a>
+            </li>
+            <li>
+                <a class="link-current" href="/info">
+                    <i class="uil uil-info-circle"></i>
+                    <span class="link-name link-name-current">Info</span>
                 </a>
             </li>
             <li>

@@ -40,9 +40,9 @@
     <div class="menu-items">
         <ul class="nav-links">
             <li>
-                <a class="link-current" href="/">
+                <a href="/">
                     <i class="uil uil-estate"></i>
-                    <span class="link-name link-name-current">Dashboard</span>
+                    <span class="link-name">Dashboard</span>
                 </a>
             </li>
             <li>
@@ -58,9 +58,9 @@
                 </a>
             </li>
             <li>
-                <a href="/product-events">
+                <a class="link-current" href="/product-events">
                     <i class="uil uil-package"></i>
-                    <span class="link-name">Product</span>
+                    <span class="link-name link-name-current">Product</span>
                 </a>
             </li>
             <li>

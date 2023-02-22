@@ -38,7 +38,7 @@
     <div class="menu-items">
         <ul class="nav-links">
             <li>
-                <a class="link-current" href="/">
+                <a href="/">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dashboard</span>
                 </a>
@@ -80,7 +80,13 @@
                 </a>
             </li>
             <li>
-                <a href="/help">
+                <a href="/info">
+                    <i class="uil uil-info-circle"></i>
+                    <span class="link-name">Info</span>
+                </a>
+            </li>
+            <li>
+                <a class="link-current" href="/help">
                     <i class="uil uil-question-circle"></i>
                     <span class="link-name link-name-current">Help</span>
                 </a>
