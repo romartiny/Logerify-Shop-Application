@@ -130,6 +130,9 @@
                 </div>
                 <div class="activity-data w-screen">
 {{--                    {{ dd($info) }}--}}
+                    <div class="info-data-box">
+
+                    </div>
                 </div>
             </div>
         </div>
