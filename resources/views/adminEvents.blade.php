@@ -40,11 +40,11 @@
             <li>
                 <a class="link-current" href="/">
                     <i class="uil uil-estate"></i>
-                    <span class="link-name link-name-current">Dashboard</span>
+                    <span class="link-name">Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="/admin-events">
+                <a href="/admin-events link-name-current">
                     <i class="uil uil-head-side-mask"></i>
                     <span class="link-name">Admin</span>
                 </a>

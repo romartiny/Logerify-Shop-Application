@@ -40,7 +40,7 @@
             <li>
                 <a class="link-current" href="/">
                     <i class="uil uil-estate"></i>
-                    <span class="link-name link-name-current">Dashboard</span>
+                    <span class="link-name">Dashboard</span>
                 </a>
             </li>
             <li>
@@ -82,7 +82,7 @@
             <li>
                 <a href="/help">
                     <i class="uil uil-question-circle"></i>
-                    <span class="link-name">Help</span>
+                    <span class="link-name link-name-current">Help</span>
                 </a>
             </li>
         </ul>

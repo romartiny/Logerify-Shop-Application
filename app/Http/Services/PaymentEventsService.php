@@ -5,7 +5,7 @@ namespace App\Http\Services;
 use App\Http\Controllers\AuthController as AuthController;
 use App\Http\Repository\ResponseRepository;
 
-class TransactionEventsService
+class PaymentEventsService
 {
     private ResponseRepository $_request;
     private \App\Http\Controllers\AuthController $_authInformation;

@@ -6,15 +6,15 @@ use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Auth;
 use Osiset\ShopifyApp\Storage\Models\Plan;
 use Osiset\ShopifyApp\Util;
-use App\Http\Services\TransactionEventsService;
+use App\Http\Services\PaymentEventsService;
 use App\Http\Repository\ResponseRepository;
 
 
-class TransactionEventsController extends Controller
+class PaymentEventsController extends Controller
 {
-    public TransactionEventsService $_transactionEventsService;
+    public PaymentEventsService $_transactionEventsService;
 
-    public function __construct(TransactionEventsService $transactionEventsService)
+    public function __construct(PaymentEventsService $transactionEventsService)
     {
         $this->_transactionEventsService = $transactionEventsService;
     }
