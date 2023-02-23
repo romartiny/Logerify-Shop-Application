@@ -19,22 +19,22 @@
             <div class="overview">
                 <div class="title">
                     <i class="uil uil-tachometer-fast-alt"></i>
-                    <span class="text">Admins Dashboard</span>
+                    <span class="text">Product Dashboard</span>
                 </div>
                 <div class="boxes">
                     <div class="box box1">
                         <i class="uil uil-clock-three"></i>
-{{--                        <span class="number">{{$todayAdminEvents}}</span>--}}
+                        <span class="number">{{$todayProducts}}</span>
                         <span class="text">events for 24 hours</span>
                     </div>
                     <div class="box box2">
                         <i class="uil uil-clock"></i>
-{{--                        <span class="number">{{$threeDayAdminEvents}}</span>--}}
+                        <span class="number">{{$threeDayProducts}}</span>
                         <span class="text">events for 3 days</span>
                     </div>
                     <div class="box box3">
                         <i class="uil uil-clock-five"></i>
-{{--                        <span class="number">{{$monthAdminEvents}}</span>--}}
+                        <span class="number">{{$monthProducts}}</span>
                         <span class="text">events for 1 month</span>
                     </div>
                 </div>
@@ -43,10 +43,6 @@
             <div class="title">
                 <i class="uil uil-chart"></i>
                 <span class="text">Product Activity</span>
-            </div>
-
-            <div class="description">
-                <span class="text"><span class="main-text">Product Events</span> - all actions and manipulations related to the goods of the store</span>
             </div>
 
             <div class="activity-data w-screen">

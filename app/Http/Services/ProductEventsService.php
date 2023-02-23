@@ -40,4 +40,37 @@ class ProductEventsService
 
         return $this->normalizeShopEvents($shopEvents['body']['container']['events']);
     }
+
+    public function grabDayOrderEvents(): int
+    {
+        $todayProduct = 0;
+        foreach ($this->grabProductEvents() as $order) {
+            if (date("m/d/Y",strtotime($order['created_at'])) == date("m/d/Y")) {
+                $todayProduct += 1;
+            }
+        }
+        return $todayProduct;
+    }
+
+    public function grabThreeDayOrderEvents(): int
+    {
+        $threeDayProducts = 0;
+        foreach ($this->grabProductEvents() as $order) {
+            if (date("m/d/Y",strtotime($order['created_at'])) > date("m/d/Y", strtotime(' - 3 days'))) {
+                $threeDayProducts += 1;
+            }
+        }
+        return $threeDayProducts;
+    }
+
+    public function grabMonthOrderEvents(): int
+    {
+        $monthProducts = 0;
+        foreach ($this->grabProductEvents() as $order) {
+            if (date("m/d/Y",strtotime($order['created_at'])) > date("m/d/Y", strtotime(' - 30 days'))) {
+                $monthProducts += 1;
+            }
+        }
+        return $monthProducts;
+    }
 }
