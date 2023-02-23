@@ -551,6 +551,17 @@ input:checked ~ .collapsible-data {
     margin-bottom: -15px;
 }
 
+.shop-info-data {
+    padding: 35px;
+}
+
+.info-data-box {
+    width: 9716px;
+    height: 659px;
+    border: 1px solid var(--border-color);
+    border-radius: 69px;
+}
+
 @media (max-width: 1000px) {
     nav {
         width: 73px;
@@ -586,7 +597,7 @@ input:checked ~ .collapsible-data {
     }
 
     nav.close li i {
-        opacity: 1
+        opacity: 1;
         pointer-events: auto;
     }
 
