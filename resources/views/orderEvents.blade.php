@@ -1,17 +1,3 @@
-{{--@extends('shopify-app::layouts.default')--}}
-
-{{--@section('content')--}}
-{{--    <!-- You are: (shop domain name) -->--}}
-{{--    <p>You are: {{ $shopDomain ?? Auth::user()->name }}</p>--}}
-{{--@endsection--}}
-
-{{--@section('scripts')--}}
-{{--    @parent--}}
-
-{{--    <script>--}}
-{{--        actions.TitleBar.create(app, { title: 'Hiiiii' });--}}
-{{--    </script>--}}
-{{--@endsection--}}
 <html lang="en">
 
 <head>
@@ -21,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href="/assets/css/loader.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
     <title>Logerify | Order Events</title>
 </head>
@@ -78,6 +65,12 @@
                 <a href="/export">
                     <i class="uil uil-export"></i>
                     <span class="link-name">Export</span>
+                </a>
+            </li>
+            <li>
+                <a href="/info">
+                    <i class="uil uil-info-circle"></i>
+                    <span class="link-name link-name-current">Info</span>
                 </a>
             </li>
             <li>

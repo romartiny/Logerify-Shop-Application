@@ -547,10 +547,6 @@ input:checked ~ .collapsible-data {
     opacity: 1;
 }
 
-.status-paid {
-    /*//*/
-}
-
 .mode {
     margin-bottom: -15px;
 }
@@ -590,7 +586,7 @@ input:checked ~ .collapsible-data {
     }
 
     nav.close li i {
-        opacity: 1;
+        opacity: 1
         pointer-events: auto;
     }
 
@@ -748,7 +744,7 @@ input:checked ~ .collapsible-data {
     }
 
     nav.close li i {
-        opacity: 0;
+        opacity: 1;
         pointer-events: auto;
     }
 
