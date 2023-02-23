@@ -15,6 +15,6 @@
 
 @extends('layouts.loader')
 @extends('layouts.dashboard.dashboardBlock')
-@extends('layouts.nav')
+@extends('layouts.nav', [$page => $page])
 
 </body>

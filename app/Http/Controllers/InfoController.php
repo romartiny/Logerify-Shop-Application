@@ -27,6 +27,7 @@ class InfoController extends Controller
     public function showShopInfo(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         return view('info', [
+            'page' => 'infoPage',
             'info' => $this->getAllEvents()
         ]);
     }

@@ -42,6 +42,7 @@ class AdminEventsController extends Controller
     public function showAdminEvents(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         return view('adminEvents', [
+            'page' => 'adminPage',
             'todayAdminEvents' => $this->getTodayCountOrders(),
             'threeDayAdminEvents' => $this->getThreeDayCountOrders(),
             'monthAdminEvents' => $this->getMonthOrderEvents(),

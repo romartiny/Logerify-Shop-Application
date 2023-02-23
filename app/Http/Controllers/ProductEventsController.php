@@ -27,6 +27,7 @@ class ProductEventsController extends Controller
     public function showProductEvents(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         return view('productevents', [
+            'page' => 'productPage',
             'productEvents' => $this->getAllEvents()
         ]);
     }

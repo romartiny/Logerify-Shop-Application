@@ -14,6 +14,8 @@ class HelpController extends Controller
 {
     public function showAppInfo(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        return view('help');
+        return view('help', [
+            'page' => 'helpPage'
+        ]);
     }
 }

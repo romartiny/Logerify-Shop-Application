@@ -43,6 +43,7 @@ class DashboardController extends Controller
     |\Illuminate\Contracts\Foundation\Application
     {
         return view('dashboard', [
+            'page' => 'dashboardPage',
             'totalEvents' => $this->getTotalEvents(),
             'totalCustomers' => $this->getCustomersCount(),
             'totalOrders' => $this->getOrdersCount(),

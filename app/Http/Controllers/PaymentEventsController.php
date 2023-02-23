@@ -27,6 +27,7 @@ class PaymentEventsController extends Controller
     public function showTransactionEvents(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         return view('transactionevents', [
+            'page' => 'dashboardPage',
             'transactionEvents' => $this->getAllEvents()
         ]);
     }
