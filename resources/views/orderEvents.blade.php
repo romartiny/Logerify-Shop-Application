@@ -26,6 +26,7 @@
 </head>
 
 <body>
+<div class="loader"></div>
 <nav>
 
     <div class="logo-name">
