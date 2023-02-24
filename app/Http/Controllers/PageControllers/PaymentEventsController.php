@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\EventControllers;
+namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Services\PaymentEventsService;

@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\EventControllers;
+namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Services\DashboardService;
-
 
 class DashboardController extends Controller
 {
@@ -19,10 +18,10 @@ class DashboardController extends Controller
     {
         return view('dashboard', [
             'page' => $this->_dashboardService->page,
-            'totalEvents' => $this->_dashboardService->grabTotalEvents(),
-            'totalCustomers' => $this->_dashboardService->grabCustomersCount(),
-            'totalOrders' => $this->_dashboardService->grabOrdersCount(),
-            'lastEvents' => $this->_dashboardService->grabLastEvents()
+            'totalEventsCount' => $this->_dashboardService->grabTotalEvents(),
+            'totalCustomersCount' => $this->_dashboardService->grabCustomersCount(),
+            'totalOrdersCount' => $this->_dashboardService->grabOrdersCount(),
+            'lastEvents' => $this->_dashboardService->grabEvents()
         ]);
     }
 }

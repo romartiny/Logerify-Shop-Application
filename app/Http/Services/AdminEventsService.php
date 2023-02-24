@@ -2,78 +2,44 @@
 
 namespace App\Http\Services;
 
-use App\Http\Controllers\AuthController as AuthController;
-use App\Http\Repository\ResponseRepository;
+use App\Http\Controllers\FetchControllers\FetchDataController as FetchDataController;
+use App\Http\Services\EventsInterface as EventsInterface;
+use App\Http\Helper\AdminEventsHelper as AdminEventsHelper;
 
-class AdminEventsService
+class AdminEventsService implements EventsInterface
 {
-    private ResponseRepository $_request;
-    private \App\Http\Controllers\AuthController $_authInformation;
-    public string $getRequestType = 'GET';
+    private AdminEventsHelper $_adminEventsHelper;
+    private FetchDataController $_fetchData;
+    private array $fetchedData = [];
+    public string $page = 'adminPage';
+    private string $getRequestType = 'GET';
+    private string $resourceEventType = 'events.json';
 
-    public function __construct(ResponseRepository $request, AuthController $authInformation)
+    public function __construct(FetchDataController $fetchData, AdminEventsHelper $adminEventsHelper)
     {
-        $this->_request = $request;
-        $this->_authInformation = $authInformation;
+        $this->_fetchData = $fetchData;
+        $this->_adminEventsHelper = $adminEventsHelper;
     }
 
-    public function retrieveData($requestType, $authInformation, $resourceType)
+    public function getTodayAdminEvents(): int
     {
-        return $this->_request->getShopifyResponse($requestType, $authInformation,
-            $resourceType);
+        return $this->_adminEventsHelper->grabTodayAdminEvents($this->fetchedData['body']['container']['events']);
     }
 
-    public function normalizeShopEvents($shopEvents): array
+    public function getThreeDaysAdminEvents(): int
     {
-        foreach ($shopEvents as $key => $shopEvent) {
-            $shopEvents[$key]['created_at'] = date("m/d/Y h:i:s", strtotime($shopEvent['created_at']));
-        }
-
-        return $shopEvents;
+        return $this->_adminEventsHelper->grabCountAdminEvents($this->fetchedData['body']['container']['events'], 3);
     }
 
-    public function grabAdminEvents(): array
+    public function getMonthAdminEvents(): int
     {
-        $resourceType = 'events.json';
-        $shopEvents = $this->retrieveData($this->getRequestType,
-            $this->_authInformation->authorizedUser(), $resourceType);
-
-        return $this->normalizeShopEvents(array_reverse($shopEvents['body']['container']['events']));
+        return $this->_adminEventsHelper->grabCountAdminEvents($this->fetchedData['body']['container']['events'], 30);
     }
 
-    public function grabDayAdminEvents(): int
+    public function grabEvents(): array
     {
-        $todayAdminEvents = 0;
-        foreach ($this->grabAdminEvents() as $order) {
-            if (date("m/d/Y", strtotime($order['created_at'])) == date("m/d/Y")
-                && $order['author'] !== 'Shopify') {
-                $todayAdminEvents += 1;
-            }
-        }
-        return $todayAdminEvents;
-    }
+        $this->fetchedData = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceEventType);
 
-    public function grabThreeDayAdminEvents(): int
-    {
-        $threeDayAdminEvents = 0;
-        foreach ($this->grabAdminEvents() as $order) {
-            if (date("m/d/Y", strtotime($order['created_at'])) >
-                date("m/d/Y", strtotime(' - 3 days')) && $order['author'] !== 'Shopify') {
-                $threeDayAdminEvents += 1;
-            }
-        }
-        return $threeDayAdminEvents;
-    }
-
-    public function grabMonthAdminEvents(): int
-    {
-        $monthAdminEvents = 0;
-        foreach ($this->grabAdminEvents() as $order) {
-            if (date("m/d/Y", strtotime($order['created_at'])) >
-                date("m/d/Y", strtotime(' - 30 days')) && $order['author'] !== 'Shopify') {
-                $monthAdminEvents += 1;
-            }
-        }
-        return $monthAdminEvents;
+        return array_reverse($this->_adminEventsHelper->normalizeShopEvents($this->fetchedData['body']['container']['events']));
     }
 }

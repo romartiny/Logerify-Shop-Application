@@ -21,17 +21,17 @@
                 <div class="box box1">
                     <i class="uil uil-browser"></i>
                     <span class="text">Total Events</span>
-                    <span class="number">{{ $totalEvents }}</span>
+                    <span class="number">{{ $totalEventsCount }}</span>
                 </div>
                 <div class="box box2">
                     <i class="uil uil-process"></i>
                     <span class="text">Customers</span>
-                    <span class="number">{{ $totalCustomers }}</span>
+                    <span class="number">{{ $totalCustomersCount }}</span>
                 </div>
                 <div class="box box3">
                     <i class="uil uil-transaction"></i>
                     <span class="text">Orders</span>
-                    <span class="number">{{ $totalOrders }}</span>
+                    <span class="number">{{ $totalOrdersCount }}</span>
                 </div>
             </div>
         </div>

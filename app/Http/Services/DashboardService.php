@@ -2,64 +2,52 @@
 
 namespace App\Http\Services;
 
-use App\Http\Controllers\AuthController as AuthController;
-use App\Http\Repository\ResponseRepository;
 use App\Http\Controllers\FetchControllers\FetchDataController as FetchDataController;
+use App\Http\Services\EventsInterface as EventsInterface;
+use App\Http\Helper\DashboardEventsHelper as DashboardEventsHelper;
 
-class DashboardService
+class DashboardService implements EventsInterface
 {
-    private string $getRequestType = 'GET';
+    public string $page = 'dashboardPage';
     private FetchDataController $_fetchData;
+    private DashboardEventsHelper $_dashboardEventsHelper;
+    private string $getRequestType = 'GET';
     private string $resourceEventType = 'events.json';
     private string $resourceEventsCountType = 'events/count.json';
     private string $resourceOrdersCountType = 'orders/count.json';
     private string $resourceCustomersCountType = 'customers/count.json';
-    public string $page = 'dashboardPage';
 
-    public function __construct(FetchDataController $fetchData)
+    public function __construct(FetchDataController $fetchData, DashboardEventsHelper $dashboardEventsHelper)
     {
         $this->_fetchData = $fetchData;
-    }
-
-    public function normalizeNumber(int $number): string
-    {
-        return $number > 999 ? number_format($number, 2, ',', ' ') : $number;
+        $this->_dashboardEventsHelper = $dashboardEventsHelper;
     }
 
     public function grabTotalEvents(): int
     {
         $totalEvents = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceEventsCountType);
 
-        return $this->normalizeNumber($totalEvents['body']['container']['count']);
+        return $this->_dashboardEventsHelper->normalizeNumber($totalEvents['body']['container']['count']);
     }
 
     public function grabCustomersCount(): int
     {
         $totalEvents = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceCustomersCountType);
 
-        return $this->normalizeNumber($totalEvents['body']['container']['count']);
+        return $this->_dashboardEventsHelper->normalizeNumber($totalEvents['body']['container']['count']);
     }
 
     public function grabOrdersCount(): int
     {
         $totalEvents = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceOrdersCountType);
 
-        return $this->normalizeNumber($totalEvents['body']['container']['count']);
+        return $this->_dashboardEventsHelper->normalizeNumber($totalEvents['body']['container']['count']);
     }
 
-    public function normalizeShopEvents(array $shopEvents): array
-    {
-        foreach ($shopEvents as $key => $shopEvent) {
-            $shopEvents[$key]['created_at'] = date("m/d/Y h:i:s",strtotime($shopEvent['created_at']));
-        }
-
-        return $shopEvents;
-    }
-
-    public function grabLastEvents(): array
+    public function grabEvents(): array
     {
         $dashboardEvents = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceEventType);
-        $revertedEvents = array_reverse($this->normalizeShopEvents($dashboardEvents['body']['container']['events']));
+        $revertedEvents = array_reverse($this->_dashboardEventsHelper->normalizeShopEvents($dashboardEvents['body']['container']['events']));
 
         return array_slice($revertedEvents, 0, 10);
     }

@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\EventControllers\AdminEventsController;
-use App\Http\Controllers\EventControllers\DashboardController;
-use App\Http\Controllers\EventControllers\InfoController;
-use App\Http\Controllers\EventControllers\OrderEventsController;
-use App\Http\Controllers\EventControllers\PaymentEventsController;
-use App\Http\Controllers\EventControllers\ProductEventsController;
-use App\Http\Controllers\HelpController;
+use App\Http\Controllers\PageControllers\AdminEventsController;
+use App\Http\Controllers\PageControllers\DashboardController;
+use App\Http\Controllers\PageControllers\HelpController;
+use App\Http\Controllers\PageControllers\InfoController;
+use App\Http\Controllers\PageControllers\OrderEventsController;
+use App\Http\Controllers\PageControllers\PaymentEventsController;
+use App\Http\Controllers\PageControllers\ProductEventsController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['verify.shopify'])->group(function () {
