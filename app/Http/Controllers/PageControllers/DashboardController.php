@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\PageControllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Services\DashboardService;
+use App\Http\Controllers\Controller as Controller;
+use App\Http\Services\DashboardService as DashboardService;
 
 class DashboardController extends Controller
 {

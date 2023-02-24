@@ -4,7 +4,7 @@ namespace App\Http\Repository;
 
 use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\VersionController;
+use App\Http\Controllers\VersionController as VersionController;
 
 class ResponseRepository
 {

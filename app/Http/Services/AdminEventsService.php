@@ -2,20 +2,20 @@
 
 namespace App\Http\Services;
 
-use App\Http\Controllers\FetchControllers\FetchDataController as FetchDataController;
-use App\Http\Services\EventsInterface as EventsInterface;
 use App\Http\Helper\AdminEventsHelper as AdminEventsHelper;
+use App\Http\Services\EventsInterface as EventsInterface;
+use App\Http\Services\FetchService\FetchDataService as FetchDataService;
 
 class AdminEventsService implements EventsInterface
 {
     private AdminEventsHelper $_adminEventsHelper;
-    private FetchDataController $_fetchData;
+    private FetchDataService $_fetchData;
     private array $fetchedData = [];
     public string $page = 'adminPage';
     private string $getRequestType = 'GET';
     private string $resourceEventType = 'events.json';
 
-    public function __construct(FetchDataController $fetchData, AdminEventsHelper $adminEventsHelper)
+    public function __construct(FetchDataService $fetchData, AdminEventsHelper $adminEventsHelper)
     {
         $this->_fetchData = $fetchData;
         $this->_adminEventsHelper = $adminEventsHelper;

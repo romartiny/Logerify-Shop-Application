@@ -3,7 +3,7 @@
 namespace App\Http\Services;
 
 use App\Http\Controllers\AuthController as AuthController;
-use App\Http\Repository\ResponseRepository;
+use App\Http\Repository\ResponseRepository as ResponseRepository;
 
 class InfoService
 {

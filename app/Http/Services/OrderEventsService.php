@@ -2,20 +2,20 @@
 
 namespace App\Http\Services;
 
-use App\Http\Controllers\FetchControllers\FetchDataController as FetchDataController;
 use App\Http\Helper\OrderEventsHelper as OrderEventsHelper;
 use App\Http\Services\EventsInterface as EventsInterface;
+use App\Http\Services\FetchService\FetchDataService as FetchDataService;
 
 class OrderEventsService implements EventsInterface
 {
     private OrderEventsHelper $_orderEventsHelper;
-    private FetchDataController $_fetchData;
+    private FetchDataService $_fetchData;
     private array $fetchedData = [];
     public string $page = 'orderPage';
     private string $getRequestType = 'GET';
     private string $resourceEventType = 'orders.json';
 
-    public function __construct(FetchDataController $fetchData, OrderEventsHelper $orderEventsHelper)
+    public function __construct(FetchDataService $fetchData, OrderEventsHelper $orderEventsHelper)
     {
         $this->_fetchData = $fetchData;
         $this->_orderEventsHelper = $orderEventsHelper;

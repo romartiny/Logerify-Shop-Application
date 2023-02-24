@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\FetchControllers;
+namespace App\Http\Services\FetchService;
 
 use App\Http\Controllers\AuthController as AuthController;
-use App\Http\Repository\ResponseRepository;
+use App\Http\Repository\ResponseRepository as ResponseRepository;
 
-class FetchDataController
+class FetchDataService
 {
     private ResponseRepository $_request;
     private \App\Http\Controllers\AuthController $_authInformation;

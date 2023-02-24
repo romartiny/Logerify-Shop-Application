@@ -4,7 +4,7 @@ namespace App\Http\Helper;
 
 class AdminEventsHelper
 {
-    public function grabCountAdminEvents($fetchedData, $days): int
+    public function grabCountAdminEvents(array $fetchedData, int $days): int
     {
         $adminEventsCount = 0;
         foreach ($fetchedData as $order) {
@@ -17,7 +17,7 @@ class AdminEventsHelper
         return $adminEventsCount;
     }
 
-    public function grabTodayAdminEvents($fetchedData): int
+    public function grabTodayAdminEvents(array $fetchedData): int
     {
         $todayAdminEventsCount = 0;
         foreach ($fetchedData as $order) {
@@ -30,7 +30,7 @@ class AdminEventsHelper
         return $todayAdminEventsCount;
     }
 
-    public function normalizeShopEvents($shopEvents): array
+    public function normalizeShopEvents(array $shopEvents): array
     {
         foreach ($shopEvents as $key => $shopEvent) {
             $shopEvents[$key]['created_at'] = date("m/d/Y h:i:s", strtotime($shopEvent['created_at']));

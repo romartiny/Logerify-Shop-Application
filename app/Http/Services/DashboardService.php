@@ -2,13 +2,13 @@
 
 namespace App\Http\Services;
 
-use App\Http\Controllers\FetchControllers\FetchDataController as FetchDataController;
-use App\Http\Services\EventsInterface as EventsInterface;
 use App\Http\Helper\DashboardEventsHelper as DashboardEventsHelper;
+use App\Http\Services\EventsInterface as EventsInterface;
+use App\Http\Services\FetchService\FetchDataService as FetchDataService;
 
 class DashboardService implements EventsInterface
 {
-    private FetchDataController $_fetchData;
+    private FetchDataService $_fetchData;
     private DashboardEventsHelper $_dashboardEventsHelper;
     public string $page = 'dashboardPage';
     private string $getRequestType = 'GET';
@@ -17,7 +17,7 @@ class DashboardService implements EventsInterface
     private string $resourceOrdersCountType = 'orders/count.json';
     private string $resourceCustomersCountType = 'customers/count.json';
 
-    public function __construct(FetchDataController $fetchData, DashboardEventsHelper $dashboardEventsHelper)
+    public function __construct(FetchDataService $fetchData, DashboardEventsHelper $dashboardEventsHelper)
     {
         $this->_fetchData = $fetchData;
         $this->_dashboardEventsHelper = $dashboardEventsHelper;

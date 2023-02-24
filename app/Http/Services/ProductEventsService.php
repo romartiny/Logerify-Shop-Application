@@ -2,8 +2,8 @@
 
 namespace App\Http\Services;
 
-use App\Http\Controllers\FetchControllers\FetchDataController as FetchDataController;
 use App\Http\Helper\ProductEventsHelper as ProductEventsHelper;
+use App\Http\Services\FetchService\FetchDataService as FetchDataService;
 
 class ProductEventsService implements EventsInterface
 {
@@ -12,9 +12,9 @@ class ProductEventsService implements EventsInterface
     private string $getRequestType = 'GET';
     private string $resourceEventType = 'events.json';
     private ProductEventsHelper $_productEventsHelper;
-    private FetchDataController $_fetchData;
+    private FetchDataService $_fetchData;
 
-    public function __construct(FetchDataController $fetchData, ProductEventsHelper $productEventsHelper)
+    public function __construct(FetchDataService $fetchData, ProductEventsHelper $productEventsHelper)
     {
         $this->_fetchData = $fetchData;
         $this->_productEventsHelper = $productEventsHelper;

@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\PageControllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Services\AdminEventsService;
-
+use App\Http\Controllers\Controller as Controller;
+use App\Http\Services\AdminEventsService as AdminEventsService;
 
 class AdminEventsController extends Controller
 {
