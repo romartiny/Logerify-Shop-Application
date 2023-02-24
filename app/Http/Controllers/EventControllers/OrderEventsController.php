@@ -1,13 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\EventControllers;
 
-use App\Http\Middleware\Authenticate;
-use Illuminate\Support\Facades\Auth;
-use Osiset\ShopifyApp\Storage\Models\Plan;
-use Osiset\ShopifyApp\Util;
+use App\Http\Controllers\Controller;
 use App\Http\Services\OrderEventsService;
-use App\Http\Repository\ResponseRepository;
 
 
 class OrderEventsController extends Controller

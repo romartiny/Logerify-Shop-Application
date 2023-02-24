@@ -1,13 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\EventControllers;
 
-use App\Http\Middleware\Authenticate;
-use Illuminate\Support\Facades\Auth;
-use Osiset\ShopifyApp\Storage\Models\Plan;
-use Osiset\ShopifyApp\Util;
+use App\Http\Controllers\Controller;
 use App\Http\Services\ProductEventsService;
-use App\Http\Repository\ResponseRepository;
 
 
 class ProductEventsController extends Controller
@@ -41,7 +37,7 @@ class ProductEventsController extends Controller
 
     public function showProductEvents(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        return view('productevents', [
+        return view('productEvents', [
             'page' => 'productPage',
             'todayProducts' => $this->getTodayCountProducts(),
             'threeDayProducts' => $this->getThreeDayCountProducts(),

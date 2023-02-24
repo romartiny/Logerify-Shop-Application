@@ -4,23 +4,23 @@ namespace App\Http\Services;
 
 use App\Http\Controllers\AuthController as AuthController;
 use App\Http\Repository\ResponseRepository;
+use App\Http\Controllers\FetchControllers\FetchDataController as FetchDataController;
 
 class DashboardService
 {
-    private ResponseRepository $_request;
-    private \App\Http\Controllers\AuthController $_authInformation;
-    public string $getRequestType = 'GET';
+    private string $getRequestType = 'GET';
+    private FetchDataController $_fetchData;
+    private string $resourceEventType = 'events.json';
+    private string $resourceEventsCountType = 'events/count.json';
+    private string $resourceOrdersCountType = 'orders/count.json';
+    private string $resourceCustomersCountType = 'customers/count.json';
+    public string $page = 'dashboardPage';
 
-    public function __construct(ResponseRepository $request, AuthController $authInformation)
-    {
-        $this->_request = $request;
-        $this->_authInformation = $authInformation;
-    }
 
-    public function retrieveData($requestType, $authInformation, $resourceType)
+
+    public function __construct(FetchDataController $fetchData)
     {
-        return $this->_request->getShopifyResponse($requestType, $authInformation,
-            $resourceType);
+        $this->_fetchData = $fetchData;
     }
 
     public function normalizeNumber($number): string
@@ -30,29 +30,23 @@ class DashboardService
 
     public function grabTotalEvents(): string
     {
-        $resourceType = 'events/count.json';
-        $totalEvents = $this->retrieveData($this->getRequestType,
-            $this->_authInformation->authorizedUser(), $resourceType );
+        $totalEvents = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceEventsCountType);
 
         return $this->normalizeNumber($totalEvents['body']['container']['count']);
     }
 
-    public function grabCustomersCount(): string //need to fix 
+    public function grabCustomersCount(): string
     {
-        $resourceType = 'customers/count.json';
-        $totalCustomersCount = $this->retrieveData($this->getRequestType,
-            $this->_authInformation->authorizedUser(), $resourceType );
+        $totalEvents = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceCustomersCountType);
 
-        return $this->normalizeNumber($totalCustomersCount['body']['container']['count']);
+        return $this->normalizeNumber($totalEvents['body']['container']['count']);
     }
 
     public function grabOrdersCount(): string
     {
-        $resourceType = 'orders/count.json';
-        $totalOrdersCount = $this->retrieveData($this->getRequestType,
-            $this->_authInformation->authorizedUser(), $resourceType );
+        $totalEvents = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceOrdersCountType);
 
-        return $this->normalizeNumber($totalOrdersCount['body']['container']['count']);
+        return $this->normalizeNumber($totalEvents['body']['container']['count']);
     }
 
     public function normalizeShopEvents($shopEvents): array
@@ -66,10 +60,8 @@ class DashboardService
 
     public function grabLastEvents(): array
     {
-        $resourceType = 'events.json';
-        $shopEvents = $this->retrieveData($this->getRequestType,
-            $this->_authInformation->authorizedUser(), $resourceType);
-        $revertedEvents = $this->normalizeShopEvents(array_reverse($shopEvents['body']['container']['events']));
+        $dashboardEvents = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceEventType);
+        $revertedEvents = $this->normalizeShopEvents($dashboardEvents['body']['container']['events']);
 
         return array_slice($revertedEvents, 0, 11);
     }

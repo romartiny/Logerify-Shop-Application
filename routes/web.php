@@ -1,13 +1,13 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\AdminEventsController;
-use App\Http\Controllers\OrderEventsController;
-use App\Http\Controllers\ProductEventsController;
-use App\Http\Controllers\PaymentEventsController;
-use App\Http\Controllers\InfoController;
+use App\Http\Controllers\EventControllers\AdminEventsController;
+use App\Http\Controllers\EventControllers\DashboardController;
+use App\Http\Controllers\EventControllers\InfoController;
+use App\Http\Controllers\EventControllers\OrderEventsController;
+use App\Http\Controllers\EventControllers\PaymentEventsController;
+use App\Http\Controllers\EventControllers\ProductEventsController;
 use App\Http\Controllers\HelpController;
+use Illuminate\Support\Facades\Route;
 
 Route::middleware(['verify.shopify'])->group(function () {
     Route::get('/', [DashboardController::class, 'showDashboard'])
