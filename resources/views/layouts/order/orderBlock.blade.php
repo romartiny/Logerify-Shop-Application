@@ -21,17 +21,17 @@
                 <div class="boxes">
                     <div class="box box1">
                         <i class="uil uil-clock-three"></i>
-                        <span class="number">{{$todayOrders}}</span>
+                        <span class="number">{{$todayOrdersCount}}</span>
                         <span class="text">events for 24 hours</span>
                     </div>
                     <div class="box box2">
                         <i class="uil uil-clock"></i>
-                        <span class="number">{{$threeDayOrders}}</span>
+                        <span class="number">{{$threeDayOrdersCount}}</span>
                         <span class="text">events for 3 days</span>
                     </div>
                     <div class="box box3">
                         <i class="uil uil-clock-five"></i>
-                        <span class="number">{{$monthOrders}}</span>
+                        <span class="number">{{$monthOrdersCount}}</span>
                         <span class="text">events for 1 month</span>
                     </div>
                 </div>

@@ -5,7 +5,6 @@ namespace App\Http\Controllers\PageControllers;
 use App\Http\Controllers\Controller;
 use App\Http\Services\ProductEventsService;
 
-
 class ProductEventsController extends Controller
 {
     public ProductEventsService $_productEventsService;
@@ -15,34 +14,14 @@ class ProductEventsController extends Controller
         $this->_productEventsService = $productEventsService;
     }
 
-    public function getAllEvents(): array
-    {
-        return $this->_productEventsService->grabProductEvents();
-    }
-
-    public function getTodayCountProducts(): int
-    {
-        return $this->_productEventsService->grabDayOrderEvents();
-    }
-
-    public function getThreeDayCountProducts(): int
-    {
-        return $this->_productEventsService->grabThreeDayOrderEvents();
-    }
-
-    public function getMonthOrderProducts(): int
-    {
-        return $this->_productEventsService->grabMonthOrderEvents();
-    }
-
     public function showProductEvents(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         return view('productEvents', [
-            'page' => 'productPage',
-            'todayProducts' => $this->getTodayCountProducts(),
-            'threeDayProducts' => $this->getThreeDayCountProducts(),
-            'monthProducts' => $this->getMonthOrderProducts(),
-            'productEvents' => $this->getAllEvents()
+            'page' => $this->_productEventsService->page,
+            'productEvents' => $this->_productEventsService->getEvents(),
+            'todayProducts' => $this->_productEventsService->getTodayProductEventsCount(),
+            'threeDayProducts' => $this->_productEventsService->getThreeDaysAdminEventsCount(),
+            'monthProducts' => $this->_productEventsService->getMonthAdminEventsCount()
         ]);
     }
 }

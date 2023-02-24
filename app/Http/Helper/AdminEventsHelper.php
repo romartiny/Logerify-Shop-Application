@@ -6,28 +6,28 @@ class AdminEventsHelper
 {
     public function grabCountAdminEvents($fetchedData, $days): int
     {
-        $adminEvents = 0;
+        $adminEventsCount = 0;
         foreach ($fetchedData as $order) {
             if (date("m/d/Y", strtotime($order['created_at'])) >
                 date("m/d/Y", strtotime(" - $days days")) && $order['author'] !== 'Shopify') {
-                $adminEvents += 1;
+                $adminEventsCount += 1;
             }
         }
 
-        return $adminEvents;
+        return $adminEventsCount;
     }
 
     public function grabTodayAdminEvents($fetchedData): int
     {
-        $todayAdminEvents = 0;
+        $todayAdminEventsCount = 0;
         foreach ($fetchedData as $order) {
             if (date("m/d/Y", strtotime($order['created_at'])) == date("m/d/Y")
                 && $order['author'] !== 'Shopify') {
-                $todayAdminEvents += 1;
+                $todayAdminEventsCount += 1;
             }
         }
 
-        return $todayAdminEvents;
+        return $todayAdminEventsCount;
     }
 
     public function normalizeShopEvents($shopEvents): array

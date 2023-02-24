@@ -21,7 +21,7 @@ class DashboardController extends Controller
             'totalEventsCount' => $this->_dashboardService->grabTotalEvents(),
             'totalCustomersCount' => $this->_dashboardService->grabCustomersCount(),
             'totalOrdersCount' => $this->_dashboardService->grabOrdersCount(),
-            'lastEvents' => $this->_dashboardService->grabEvents()
+            'lastEvents' => $this->_dashboardService->getEvents()
         ]);
     }
 }

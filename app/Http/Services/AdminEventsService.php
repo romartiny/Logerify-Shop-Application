@@ -36,7 +36,7 @@ class AdminEventsService implements EventsInterface
         return $this->_adminEventsHelper->grabCountAdminEvents($this->fetchedData['body']['container']['events'], 30);
     }
 
-    public function grabEvents(): array
+    public function getEvents(): array
     {
         $this->fetchedData = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceEventType);
 

@@ -2,75 +2,43 @@
 
 namespace App\Http\Services;
 
-use App\Http\Controllers\AuthController as AuthController;
-use App\Http\Repository\ResponseRepository;
+use App\Http\Controllers\FetchControllers\FetchDataController as FetchDataController;
+use App\Http\Helper\ProductEventsHelper as ProductEventsHelper;
 
-class ProductEventsService
+class ProductEventsService implements EventsInterface
 {
-    private ResponseRepository $_request;
-    private \App\Http\Controllers\AuthController $_authInformation;
-    public string $getRequestType = 'GET';
+    private array $fetchedData = [];
+    public string $page = 'productPage';
+    private string $getRequestType = 'GET';
+    private string $resourceEventType = 'events.json';
+    private ProductEventsHelper $_productEventsHelper;
+    private FetchDataController $_fetchData;
 
-    public function __construct(ResponseRepository $request, AuthController $authInformation)
+    public function __construct(FetchDataController $fetchData, ProductEventsHelper $productEventsHelper)
     {
-        $this->_request = $request;
-        $this->_authInformation = $authInformation;
+        $this->_fetchData = $fetchData;
+        $this->_productEventsHelper = $productEventsHelper;
     }
 
-    public function retrieveData($requestType, $authInformation, $resourceType)
+    public function getTodayProductEventsCount(): int
     {
-        return $this->_request->getShopifyResponse($requestType, $authInformation,
-            $resourceType);
+        return $this->_productEventsHelper->grabDayOrderEventsCount($this->fetchedData['body']['container']['events']);
     }
 
-    public function normalizeShopEvents($shopEvents): array
+    public function getThreeDaysAdminEventsCount(): int
     {
-        foreach ($shopEvents as $key => $shopEvent) {
-            $shopEvents[$key]['created_at'] = date("m/d/Y h:i:s",strtotime($shopEvent['created_at']));
-        }
-
-        return $shopEvents;
+        return $this->_productEventsHelper->grabOrderEventsCount($this->fetchedData['body']['container']['events'], 3);
     }
 
-    public function grabProductEvents(): array
+    public function getMonthAdminEventsCount(): int
     {
-        $resourceType = 'events.json';
-        $shopEvents = $this->retrieveData($this->getRequestType,
-            $this->_authInformation->authorizedUser(), $resourceType);
-
-        return $this->normalizeShopEvents($shopEvents['body']['container']['events']);
+        return $this->_productEventsHelper->grabOrderEventsCount($this->fetchedData['body']['container']['events'], 30);
     }
 
-    public function grabDayOrderEvents(): int
+    public function getEvents(): array
     {
-        $todayProduct = 0;
-        foreach ($this->grabProductEvents() as $order) {
-            if (date("m/d/Y",strtotime($order['created_at'])) == date("m/d/Y")) {
-                $todayProduct += 1;
-            }
-        }
-        return $todayProduct;
-    }
+        $this->fetchedData = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceEventType);
 
-    public function grabThreeDayOrderEvents(): int
-    {
-        $threeDayProducts = 0;
-        foreach ($this->grabProductEvents() as $order) {
-            if (date("m/d/Y",strtotime($order['created_at'])) > date("m/d/Y", strtotime(' - 3 days'))) {
-                $threeDayProducts += 1;
-            }
-        }
-        return $threeDayProducts;
-    }
-
-    public function grabMonthOrderEvents(): int
-    {
-        $monthProducts = 0;
-        foreach ($this->grabProductEvents() as $order) {
-            if (date("m/d/Y",strtotime($order['created_at'])) > date("m/d/Y", strtotime(' - 30 days'))) {
-                $monthProducts += 1;
-            }
-        }
-        return $monthProducts;
+        return array_reverse($this->_productEventsHelper->normalizeShopEvents($this->fetchedData['body']['container']['events']));
     }
 }

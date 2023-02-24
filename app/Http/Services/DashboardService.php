@@ -8,9 +8,9 @@ use App\Http\Helper\DashboardEventsHelper as DashboardEventsHelper;
 
 class DashboardService implements EventsInterface
 {
-    public string $page = 'dashboardPage';
     private FetchDataController $_fetchData;
     private DashboardEventsHelper $_dashboardEventsHelper;
+    public string $page = 'dashboardPage';
     private string $getRequestType = 'GET';
     private string $resourceEventType = 'events.json';
     private string $resourceEventsCountType = 'events/count.json';
@@ -44,7 +44,7 @@ class DashboardService implements EventsInterface
         return $this->_dashboardEventsHelper->normalizeNumber($totalEvents['body']['container']['count']);
     }
 
-    public function grabEvents(): array
+    public function getEvents(): array
     {
         $dashboardEvents = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceEventType);
         $revertedEvents = array_reverse($this->_dashboardEventsHelper->normalizeShopEvents($dashboardEvents['body']['container']['events']));

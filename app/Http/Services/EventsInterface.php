@@ -4,5 +4,5 @@ namespace App\Http\Services;
 
 interface EventsInterface
 {
-    public function grabEvents(): array;
+    public function getEvents(): array;
 }
