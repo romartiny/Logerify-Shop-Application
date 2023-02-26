@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\PageControllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Services\PaymentEventsService;
-
+use App\Http\Controllers\Controller as Controller;
+use App\Http\Services\PaymentEventsService as PaymentEventsService;
 
 class PaymentEventsController extends Controller
 {
@@ -22,7 +21,7 @@ class PaymentEventsController extends Controller
 
     public function showTransactionEvents(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        return view('transactionevents', [
+        return view('transactionEvents', [
             'page' => 'dashboardPage',
             'transactionEvents' => $this->getAllEvents()
         ]);
