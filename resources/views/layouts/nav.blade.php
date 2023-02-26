@@ -38,7 +38,7 @@
             </li>
             <li>
                 <a @if($page == 'paymentPage')class="link-current" @endif
-                    href="#">
+                    href="/payment-events">
                     <i class="uil uil-money-bill-stack"></i>
                     <span class="link-name @if($page == 'paymentPage')link-name-current @endif">Payment</span>
                 </a>

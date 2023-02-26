@@ -24,7 +24,7 @@ class InfoController extends Controller
     {
         return view('info', [
             'page' => 'infoPage',
-            'info' => $this->getAllEvents()
+            'InfoLayout' => $this->getAllEvents()
         ]);
     }
 }

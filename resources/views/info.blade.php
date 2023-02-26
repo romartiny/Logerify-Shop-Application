@@ -14,7 +14,7 @@
 <body>
 
 @extends('layouts.loader')
-@extends('layouts.info.infoBlock')
+@extends('layouts.InfoLayout.infoBlock')
 @extends('layouts.nav')
 
 </body>

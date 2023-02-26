@@ -14,7 +14,7 @@
 <body>
 
 @extends('layouts.loader')
-@extends('layouts.admin.adminBlock')
+@extends('layouts.AdminLayout.adminBlock')
 @extends('layouts.nav')
 
 </body>

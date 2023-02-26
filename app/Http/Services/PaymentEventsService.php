@@ -3,9 +3,10 @@
 namespace App\Http\Services;
 
 use App\Http\Controllers\AuthController as AuthController;
-use App\Http\Repository\ResponseRepository;
+use App\Http\Services\EventsInterface as EventsInterface;
+use App\Http\Repository\ResponseRepository as ResponseRepository;
 
-class PaymentEventsService
+class PaymentEventsService implements EventsInterface
 {
     private ResponseRepository $_request;
     private \App\Http\Controllers\AuthController $_authInformation;
@@ -23,21 +24,12 @@ class PaymentEventsService
             $resourceType);
     }
 
-    public function normalizeShopEvents($shopEvents): array
-    {
-        foreach ($shopEvents as $key => $shopEvent) {
-            $shopEvents[$key]['created_at'] = date("m/d/Y h:i:s",strtotime($shopEvent['created_at']));
-        }
-
-        return $shopEvents;
-    }
-
-    public function grabPayoutEvents(): array
+    public function getEvents(): array
     {
         $resourceType = 'shopify_payments/payouts.json';
         $shopEvents = $this->retrieveData($this->getRequestType,
             $this->_authInformation->authorizedUser(), $resourceType);
 
-        return $this->normalizeShopEvents($shopEvents['body']['container']);
+        return $shopEvents;
     }
 }

@@ -14,7 +14,7 @@
 <body>
 
 @extends('layouts.loader')
-@extends('layouts.order.orderBlock')
+@extends('layouts.OrderLayout.orderBlock')
 @extends('layouts.nav')
 
 </body>

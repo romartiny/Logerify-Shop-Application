@@ -27,6 +27,7 @@
 </head>
 
 <body>
+
 <div class="loader"></div>
 <nav>
     <div class="logo-name">
@@ -144,12 +145,12 @@
 {{--                            @if($event['subject_type'] == 'Product')--}}
 {{--                                <tr class="tr-elem">--}}
 {{--                                    <td class="p-3 text-sm text-gray-700">--}}
-{{--                                        <span class="total-info text-sm text-gray-700">--}}
+{{--                                        <span class="total-InfoLayout text-sm text-gray-700">--}}
 {{--                                            {{ $event['author'] }}--}}
 {{--                                        </span>--}}
 {{--                                    </td>--}}
 {{--                                    <td class="p-3 text-sm text-gray-700">--}}
-{{--                                        <span class="total-info text-sm text-gray-700">--}}
+{{--                                        <span class="total-InfoLayout text-sm text-gray-700">--}}
 {{--                                            {{ $event['subject_type'] }}--}}
 {{--                                        </span>--}}
 {{--                                    </td>--}}
@@ -159,10 +160,10 @@
 {{--                                            {{ $event['verb'] }}--}}
 {{--                                        </span>--}}
 {{--                                    </td>--}}
-{{--                                    <td class="total-info p-3 text-sm text-gray-700">--}}
+{{--                                    <td class="total-InfoLayout p-3 text-sm text-gray-700">--}}
 {{--                                        {{ $event['description'] }}--}}
 {{--                                    </td>--}}
-{{--                                    <td class="total-info p-3 text-sm text-gray-700 created-date">--}}
+{{--                                    <td class="total-InfoLayout p-3 text-sm text-gray-700 created-date">--}}
 {{--                                        {{ $event['created_at'] }}--}}
 {{--                                    </td>--}}
 {{--                                </tr>--}}
@@ -175,7 +176,7 @@
 {{--                            @if($event['subject_type'] == 'Product')--}}
 {{--                                <div class="mobile-block-box">--}}
 {{--                                    <div class="box-mobile p-4 rounded-lg shadow">--}}
-{{--                                        <div class="box-mobile-info">--}}
+{{--                                        <div class="box-mobile-InfoLayout">--}}
 {{--                                            <div class="box-type">--}}
 {{--                                                <span class="table-mobile-text text-gray-500">--}}
 {{--                                            {{ $event['subject_type'] }}--}}

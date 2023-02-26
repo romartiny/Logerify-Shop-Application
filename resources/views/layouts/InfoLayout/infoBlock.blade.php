@@ -18,7 +18,7 @@
                 <span class="text">Shop Information</span>
             </div>
             <div class="activity-data shop-info-data w-screen">
-                {{--                    {{ dd($info) }}--}}
+                {{--                    {{ dd($InfoLayout) }}--}}
                 <div class="info-data-box">
 
                 </div>

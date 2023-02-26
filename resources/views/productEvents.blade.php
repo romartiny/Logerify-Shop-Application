@@ -14,7 +14,7 @@
 <body>
 
 @extends('layouts.loader')
-@extends('layouts.product.productBlock')
+@extends('layouts.ProductLayout.productBlock')
 @extends('layouts.nav')
 
 </body>
