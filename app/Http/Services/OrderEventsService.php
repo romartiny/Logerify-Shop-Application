@@ -23,17 +23,20 @@ class OrderEventsService implements EventsInterface
 
     public function getDayOrderEventsCount(): int
     {
-        return $this->_orderEventsHelper->grabDayOrderEvents($this->fetchedData['body']['container']['orders']);
+        return $this->_orderEventsHelper->normalizeNumber($this->_orderEventsHelper
+            ->grabTodayOrderEventsCount($this->fetchedData['body']['container']['orders']));
     }
 
     public function getThreeDayOrderEventsCount(): int
     {
-        return $this->_orderEventsHelper->grabOrderEventsCount($this->fetchedData['body']['container']['orders'], 3);
+        return $this->_orderEventsHelper->normalizeNumber($this->_orderEventsHelper
+            ->grabOrderEventsCount($this->fetchedData['body']['container']['orders'], 3));
     }
 
     public function getMonthOrderEventsCount(): int
     {
-        return $this->_orderEventsHelper->grabOrderEventsCount($this->fetchedData['body']['container']['orders'], 30);
+        return $this->_orderEventsHelper->normalizeNumber($this->_orderEventsHelper
+            ->grabOrderEventsCount($this->fetchedData['body']['container']['orders'], 30));
     }
 
     public function getEvents(): array

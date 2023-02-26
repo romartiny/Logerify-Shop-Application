@@ -2,38 +2,42 @@
 
 namespace App\Http\Helper;
 
-class ProductEventsHelper
+use App\Http\Helper\NormalizeCountEventsHelper as NormalizeCountEventsHelper;
+
+class ProductEventsHelper extends NormalizeCountEventsHelper
 {
-    public function normalizeShopEvents($shopEvents): array
-    {
-        foreach ($shopEvents as $key => $shopEvent) {
-            $shopEvents[$key]['created_at'] = date("m/d/Y h:i:s",strtotime($shopEvent['created_at']));
-        }
+    private int $todayProductEventsCount = 0;
+    private int $productEventsCount = 0;
 
-        return $shopEvents;
-    }
-
-    public function grabDayOrderEventsCount($fetchedData): int
+    public function grabTodayOrderEventsCount(array $fetchedData): int
     {
-        $todayProduct = 0;
         foreach ($fetchedData as $order) {
             if (date("m/d/Y",strtotime($order['created_at'])) == date("m/d/Y")) {
-                $todayProduct += 1;
+                $this->todayProductEventsCount += 1;
             }
         }
 
-        return $todayProduct;
+        return $this->todayProductEventsCount;
     }
 
-    public function grabOrderEventsCount($fetchedData, $days): int
+    public function grabOrderEventsCount(array $fetchedData, int $days): int
     {
-        $threeDayProducts = 0;
         foreach ($fetchedData as $order) {
             if (date("m/d/Y",strtotime($order['created_at'])) > date("m/d/Y", strtotime(" - $days days"))) {
-                $threeDayProducts += 1;
+                $this->productEventsCount += 1;
             }
         }
 
-        return $threeDayProducts;
+        return $this->productEventsCount;
+    }
+
+    public function normalizeShopEvents(array $shopEvents): array
+    {
+        return parent::normalizeShopEvents($shopEvents);
+    }
+
+    public function normalizeNumber(int $number): int
+    {
+        return parent::normalizeNumber($number);
     }
 }

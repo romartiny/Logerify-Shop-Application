@@ -2,40 +2,44 @@
 
 namespace App\Http\Helper;
 
-class AdminEventsHelper
+use App\Http\Helper\NormalizeCountEventsHelper as NormalizeCountEventsHelper;
+
+class AdminEventsHelper extends NormalizeCountEventsHelper
 {
-    public function grabCountAdminEvents(array $fetchedData, int $days): int
-    {
-        $adminEventsCount = 0;
-        foreach ($fetchedData as $order) {
-            if (date("m/d/Y", strtotime($order['created_at'])) >
-                date("m/d/Y", strtotime(" - $days days")) && $order['author'] !== 'Shopify') {
-                $adminEventsCount += 1;
-            }
-        }
+    private int $todayAdminEventsCount = 0;
+    private int $adminEventsCount = 0;
 
-        return $adminEventsCount;
-    }
-
-    public function grabTodayAdminEvents(array $fetchedData): int
+    public function grabTodayAdminEventsCount(array $fetchedData): int
     {
-        $todayAdminEventsCount = 0;
         foreach ($fetchedData as $order) {
             if (date("m/d/Y", strtotime($order['created_at'])) == date("m/d/Y")
                 && $order['author'] !== 'Shopify') {
-                $todayAdminEventsCount += 1;
+                $this->todayAdminEventsCount += 1;
             }
         }
 
-        return $todayAdminEventsCount;
+        return $this->todayAdminEventsCount;
+    }
+
+    public function grabAdminEventsCount(array $fetchedData, int $days): int
+    {
+        foreach ($fetchedData as $order) {
+            if (date("m/d/Y", strtotime($order['created_at'])) >
+                date("m/d/Y", strtotime(" - $days days")) && $order['author'] !== 'Shopify') {
+                $this->adminEventsCount += 1;
+            }
+        }
+
+        return $this->adminEventsCount;
     }
 
     public function normalizeShopEvents(array $shopEvents): array
     {
-        foreach ($shopEvents as $key => $shopEvent) {
-            $shopEvents[$key]['created_at'] = date("m/d/Y h:i:s", strtotime($shopEvent['created_at']));
-        }
+        return parent::normalizeShopEvents($shopEvents);
+    }
 
-        return $shopEvents;
+    public function normalizeNumber(int $number): int
+    {
+        return parent::normalizeNumber($number);
     }
 }

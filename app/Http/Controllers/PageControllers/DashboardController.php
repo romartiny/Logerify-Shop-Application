@@ -18,9 +18,9 @@ class DashboardController extends Controller
     {
         return view('dashboard', [
             'page' => $this->_dashboardService->page,
-            'totalEventsCount' => $this->_dashboardService->grabTotalEvents(),
-            'totalCustomersCount' => $this->_dashboardService->grabCustomersCount(),
-            'totalOrdersCount' => $this->_dashboardService->grabOrdersCount(),
+            'totalEventsCount' => $this->_dashboardService->grabTotalEventsCount(),
+            'totalCustomersCount' => $this->_dashboardService->grabTotalCustomersCount(),
+            'totalOrdersCount' => $this->_dashboardService->grabTotalOrdersCount(),
             'lastEvents' => $this->_dashboardService->getEvents()
         ]);
     }

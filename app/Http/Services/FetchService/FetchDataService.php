@@ -24,8 +24,6 @@ class FetchDataService
 
     public function fetchShopifyData($getRequestType, $resourceType): array
     {
-        $shopifyEvents = $this->retrieveShopifyData($getRequestType, $resourceType);
-
-        return array_reverse($shopifyEvents);
+        return array_reverse($this->retrieveShopifyData($getRequestType, $resourceType));
     }
 }

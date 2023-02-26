@@ -21,19 +21,22 @@ class AdminEventsService implements EventsInterface
         $this->_adminEventsHelper = $adminEventsHelper;
     }
 
-    public function getTodayAdminEvents(): int
+    public function getTodayAdminEventsCount(): int
     {
-        return $this->_adminEventsHelper->grabTodayAdminEvents($this->fetchedData['body']['container']['events']);
+        return $this->_adminEventsHelper->normalizeNumber($this->_adminEventsHelper
+            ->grabTodayAdminEventsCount($this->fetchedData['body']['container']['events']));
     }
 
-    public function getThreeDaysAdminEvents(): int
+    public function getThreeDaysAdminEventsCount(): int
     {
-        return $this->_adminEventsHelper->grabCountAdminEvents($this->fetchedData['body']['container']['events'], 3);
+        return $this->_adminEventsHelper->normalizeNumber($this->_adminEventsHelper
+            ->grabAdminEventsCount($this->fetchedData['body']['container']['events'], 3));
     }
 
-    public function getMonthAdminEvents(): int
+    public function getMonthAdminEventsCount(): int
     {
-        return $this->_adminEventsHelper->grabCountAdminEvents($this->fetchedData['body']['container']['events'], 30);
+        return $this->_adminEventsHelper->normalizeNumber($this->_adminEventsHelper
+            ->grabAdminEventsCount($this->fetchedData['body']['container']['events'], 30));
     }
 
     public function getEvents(): array

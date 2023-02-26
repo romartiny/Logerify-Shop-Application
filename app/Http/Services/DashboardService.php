@@ -8,8 +8,8 @@ use App\Http\Services\FetchService\FetchDataService as FetchDataService;
 
 class DashboardService implements EventsInterface
 {
-    private FetchDataService $_fetchData;
     private DashboardEventsHelper $_dashboardEventsHelper;
+    private FetchDataService $_fetchData;
     public string $page = 'dashboardPage';
     private string $getRequestType = 'GET';
     private string $resourceEventType = 'events.json';
@@ -23,21 +23,21 @@ class DashboardService implements EventsInterface
         $this->_dashboardEventsHelper = $dashboardEventsHelper;
     }
 
-    public function grabTotalEvents(): int
+    public function grabTotalEventsCount(): int
     {
         $totalEvents = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceEventsCountType);
 
         return $this->_dashboardEventsHelper->normalizeNumber($totalEvents['body']['container']['count']);
     }
 
-    public function grabCustomersCount(): int
+    public function grabTotalCustomersCount(): int
     {
         $totalEvents = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceCustomersCountType);
 
         return $this->_dashboardEventsHelper->normalizeNumber($totalEvents['body']['container']['count']);
     }
 
-    public function grabOrdersCount(): int
+    public function grabTotalOrdersCount(): int
     {
         $totalEvents = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceOrdersCountType);
 
@@ -47,8 +47,8 @@ class DashboardService implements EventsInterface
     public function getEvents(): array
     {
         $dashboardEvents = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceEventType);
-        $revertedEvents = array_reverse($this->_dashboardEventsHelper->normalizeShopEvents($dashboardEvents['body']['container']['events']));
 
-        return array_slice($revertedEvents, 0, 10);
+        return array_slice(array_reverse($this->_dashboardEventsHelper
+            ->normalizeShopEvents($dashboardEvents['body']['container']['events'])), 0, 10);
     }
 }

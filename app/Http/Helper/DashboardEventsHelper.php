@@ -2,19 +2,17 @@
 
 namespace App\Http\Helper;
 
-class DashboardEventsHelper
+use App\Http\Helper\NormalizeCountEventsHelper as NormalizeCountEventsHelper;
+
+class DashboardEventsHelper extends NormalizeCountEventsHelper
 {
     public function normalizeNumber(int $number): int
     {
-        return $number > 999 ? number_format($number, 2, ',', ' ') : $number;
+        return parent::normalizeNumber($number);
     }
 
     public function normalizeShopEvents(array $shopEvents): array
     {
-        foreach ($shopEvents as $key => $shopEvent) {
-            $shopEvents[$key]['created_at'] = date("m/d/Y h:i:s",strtotime($shopEvent['created_at']));
-        }
-
-        return $shopEvents;
+        return parent::normalizeShopEvents($shopEvents);
     }
 }

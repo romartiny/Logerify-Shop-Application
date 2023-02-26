@@ -19,9 +19,9 @@ class AdminEventsController extends Controller
         return view('adminEvents', [
             'page' => $this->_adminEventsService->page,
             'allEvents' => $this->_adminEventsService->getEvents(),
-            'todayAdminEvents' => $this->_adminEventsService->getTodayAdminEvents(),
-            'threeDayAdminEvents' => $this->_adminEventsService->getThreeDaysAdminEvents(),
-            'monthAdminEvents' => $this->_adminEventsService->getMonthAdminEvents()
+            'todayAdminEvents' => $this->_adminEventsService->getTodayAdminEventsCount(),
+            'threeDayAdminEvents' => $this->_adminEventsService->getThreeDaysAdminEventsCount(),
+            'monthAdminEvents' => $this->_adminEventsService->getMonthAdminEventsCount()
         ]);
     }
 }
