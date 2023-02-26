@@ -398,6 +398,15 @@ nav.close ~ .dashboard .top {
     margin-left: 10px;
 }
 
+.help-information-box h1 {
+    color: var(--text-color);
+    font-size: 34px;
+}
+
+.text-info {
+    color: var(--text-color);
+}
+
 .dash-content .description .text {
     font-size: 16px;
     font-weight: 400;
