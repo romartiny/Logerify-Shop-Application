@@ -88,10 +88,10 @@
                         </svg>
                     </div>
 
-                    <h2 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">Where Logerify take data?</h2>
-
                     <div>
-                        <p class="mt-2 text-sm text-info dark:text-white">
+                        <h2 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">Where Logerify take data?</h2>
+
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
                             The app takes data directly from your store and is not stored or used anywhere else. We
                             guarantee that your data is safe.
                         </p>
@@ -110,7 +110,7 @@
                     <div>
                         <h2 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">The app is free?</h2>
 
-                        <p class="mt-2 text-sm text-info dark:text-white">
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
                             The app is completely free. You can connect it to different stores and use it however you
                             want.
                         </p>
@@ -129,7 +129,7 @@
                     <div>
                         <h2 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">What can I get from this application?</h2>
 
-                        <p class="mt-2 text-sm text-info dark:text-white">
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
                             With this app you can get all the activity in your store. You will be able to monitor the
                             actions of administrators and keep reports on the store in more detail.
                         </p>
@@ -148,7 +148,7 @@
                     <div>
                         <h2 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">Who is the app for?</h2>
 
-                        <p class="mt-2 text-sm text-info dark:text-white">
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
                             The app is designed for store administrators to keep track of information.
                         </p>
                     </div>
@@ -166,7 +166,7 @@
                     <div>
                         <h2 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">Is the information in Logerify correct?</h2>
 
-                        <p class="mt-2 text-sm text-info dark:text-white">
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
                             The information in the app is fully consistent with your store. You can check this.
                         </p>
                     </div>
@@ -184,7 +184,7 @@
                     <div>
                         <h2 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">Is it possible to delete the application?</h2>
 
-                        <p class="mt-2 text-sm text-info dark:text-white">
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">
                             Of course, you can delete our application at any time. The next time you install it, the
                             data will come back to you
                         </p>
