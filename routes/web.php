@@ -10,18 +10,19 @@ use App\Http\Controllers\PageControllers\ProductEventsController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['verify.shopify'])->group(function () {
-    Route::get('/', [DashboardController::class, 'showDashboard'])
-        ->name('home')->middleware(['verify.shopify']);
+    Route::get('/', [DashboardController::class, 'showDashboard'])->name('home');
     Route::get('/admin-events', [AdminEventsController::class, 'showAdminEvents'])
-        ->name('admin-events')->middleware(['verify.shopify']);
+        ->name('admin-events');
     Route::get('/order-events', [OrderEventsController::class, 'showOrderEvents'])
-        ->name('order-events')->middleware(['verify.shopify']);
+        ->name('order-events');
     Route::get('/product-events', [ProductEventsController::class, 'showProductEvents'])
-        ->name('product-events')->middleware(['verify.shopify']);
+        ->name('product-events');
     Route::get('/payment-events', [PaymentEventsController::class, 'showTransactionEvents'])
-        ->name('transaction-events')->middleware(['verify.shopify']);
+        ->name('transaction-events');
     Route::get('/info', [InfoController::class, 'showShopInfo'])
-        ->name('shop-information')->middleware(['verify.shopify']);
+        ->name('shop-information');
     Route::get('/help', [HelpController::class, 'showAppInfo'])
-        ->name('help-information')->middleware(['verify.shopify']);
-});
+        ->name('help-information');
+})
+//    ->middleware(['verify.shopify'])
+;
