@@ -10,6 +10,7 @@ use App\Http\Controllers\PageControllers\ProductEventsController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['verify.shopify'])->group(function () {
+    Route::get('/login', function () { return view('login');});
     Route::get('/', [DashboardController::class, 'showDashboard'])->name('home');
     Route::get('/admin-events', [AdminEventsController::class, 'showAdminEvents'])
         ->name('admin-events');

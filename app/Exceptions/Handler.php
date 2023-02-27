@@ -47,4 +47,12 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, Throwable $exception): \Illuminate\Http\Response|\Illuminate\Http\JsonResponse|\Symfony\Component\HttpFoundation\Response
+    {
+        if ($exception instanceof \Osiset\ShopifyApp\Exceptions\MissingShopDomainException) {
+            return response()->view('login', [], 500);
+        }
+        return parent::render($request, $exception);
+    }
 }
