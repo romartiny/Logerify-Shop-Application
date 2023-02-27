@@ -44,13 +44,6 @@
                 </a>
             </li>
             <li>
-                <a @if($page == 'discountPage')class="link-current" @endif
-                    href="/">
-                    <i class="uil uil-percentage"></i>
-                    <span class="link-name @if($page == 'discountPage')link-name-current @endif">Discount</span>
-                </a>
-            </li>
-            <li>
                 <a @if($page == 'exportPage')class="link-current" @endif
                     href="/export">
                     <i class="uil uil-export"></i>
