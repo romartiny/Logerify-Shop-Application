@@ -3,7 +3,7 @@
         <i class="uil uil-bars sidebar-toggle"></i>
         <span class="shop-name">{{ $shopDomain ?? Auth::user()->name }}</span>
     </div>
-    {{--                                    {{ dd($InfoLayout) }}--}}
+{{--                                        {{ dd($infoEvent) }}--}}
     <div class="dash-content">
         <div class="activity">
             <div class="title">
@@ -13,11 +13,20 @@
             <div class="activity-data shop-info-data w-screen">
                 <div class="info-data-box">
                     <div class="box-info-description">
-                        <h1 class="box-title">Shop soplify.myshopify.com</h1>
+                        <h1 class="box-title">{{ucfirst($infoEvent['name'])}} Info</h1>
                         <div class="box-description">
                             <div class="box-description-info">
-                                <p class="box-text">Shop name:</p>
-                                <span class="box-text">Shop soplify.myshopify.com</span>
+                                <p class="box-text">Shop name: {{$infoEvent['name']}}</p>
+                                <p class="box-text">Current plan: {{$infoEvent['plan_display_name']}}</p>
+                                <p class="box-text">Shopify domain: {{$infoEvent['myshopify_domain']}}</p>
+                                <p class="box-text">Shop owner: {{$infoEvent['shop_owner']}}</p>
+                                <p class="box-text">Email: {{$infoEvent['email']}}</p>
+                                <p class="box-text">Country: {{$infoEvent['country']}}</p>
+                                <p class="box-text">Province: {{$infoEvent['province']}}</p>
+                                <p class="box-text">Currency: {{$infoEvent['currency']}}</p>
+                                <p class="box-text">Created: {{$infoEvent['created_at']}}</p>
+                                <p class="box-text">Last update: {{$infoEvent['updated_at']}}</p>
+                                <p class="box-text">Country name: {{$infoEvent['country_name']}}</p>
                             </div>
 
                         </div>
