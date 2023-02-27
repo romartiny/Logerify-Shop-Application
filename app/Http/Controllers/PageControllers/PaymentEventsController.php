@@ -19,9 +19,9 @@ class PaymentEventsController extends Controller
         return view('paymentEvents', [
             'page' => $this->_transactionEventsService->page,
             'paymentEvents' => $this->_transactionEventsService->getEvents(),
-//            'todayProductEventsCount' => $this->_transactionEventsService->getTodayOrderEventsCount(),
-//            'threeDayProductEventsCount' => $this->_transactionEventsService->getThreeDayOrderEventsCount(),
-//            'monthProductEventsCount' => $this->_transactionEventsService->getMonthOrderEventsCount()
+            'todayProductEventsCount' => $this->_transactionEventsService->getTodayOrderEventsCount(),
+            'threeDayProductEventsCount' => $this->_transactionEventsService->getThreeDayOrderEventsCount(),
+            'monthProductEventsCount' => $this->_transactionEventsService->getMonthOrderEventsCount()
         ]);
     }
 }

@@ -531,6 +531,16 @@ nav.close ~ .dashboard .top {
     background-color: #9c54f5;
 }
 
+.verb-plus {
+    background-color: #178100;
+    color: #dadada;
+}
+
+.verb-minus {
+    background-color: #8f0000;
+    color: #dadada;
+}
+
 .hidden {
     display: none;
     transition: var(--tran-05);

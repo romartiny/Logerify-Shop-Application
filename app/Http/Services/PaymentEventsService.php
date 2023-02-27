@@ -24,19 +24,19 @@ class PaymentEventsService implements EventsInterface
     public function getTodayOrderEventsCount(): int
     {
         return $this->_paymentEventsHelper->normalizeNumber($this->_paymentEventsHelper
-            ->grabTodayOrderEventsCount($this->fetchedData['body']['container']['events']));
+            ->grabTodayOrderEventsCount($this->fetchedData['body']['container']['tender_transactions']));
     }
 
     public function getThreeDayOrderEventsCount(): int
     {
         return $this->_paymentEventsHelper->normalizeNumber($this->_paymentEventsHelper
-            ->grabOrderEventsCount($this->fetchedData['body']['container']['events'], 3));
+            ->grabOrderEventsCount($this->fetchedData['body']['container']['tender_transactions'], 3));
     }
 
     public function getMonthOrderEventsCount(): int
     {
         return $this->_paymentEventsHelper->normalizeNumber($this->_paymentEventsHelper
-            ->grabOrderEventsCount($this->fetchedData['body']['container']['events'], 30));
+            ->grabOrderEventsCount($this->fetchedData['body']['container']['tender_transactions'], 30));
     }
 
     public function getEvents(): array

@@ -12,7 +12,7 @@
 </head>
 
 <body>
-{{dd($paymentEvents)}}
+
 @extends('layouts.loader')
 @extends('layouts.PaymentLayout.paymentBlock')
 @extends('layouts.nav')

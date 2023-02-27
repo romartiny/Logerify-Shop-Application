@@ -13,7 +13,7 @@ class PaymentEventsHelper extends NormalizeCountEventsHelper implements EventsHe
     public function grabTodayOrderEventsCount(array $fetchedData): int
     {
         foreach ($fetchedData as $order) {
-            if (date("m/d/Y", strtotime($order['created_at'])) == date("m/d/Y")) {
+            if (date("m/d/Y", strtotime($order['processed_at'])) == date("m/d/Y")) {
                 $this->todayPaymentEventsCount += 1;
             }
         }
@@ -24,7 +24,7 @@ class PaymentEventsHelper extends NormalizeCountEventsHelper implements EventsHe
     public function grabOrderEventsCount(array $fetchedData, int $days): int
     {
         foreach ($fetchedData as $order) {
-            if (date("m/d/Y", strtotime($order['created_at'])) >
+            if (date("m/d/Y", strtotime($order['processed_at'])) >
                 date("m/d/Y", strtotime(" - $days days"))) {
                 $this->paymentEventsCount += 1;
             }
