@@ -14,16 +14,14 @@ class PaymentEventsController extends Controller
         $this->_transactionEventsService = $transactionEventsService;
     }
 
-    public function getAllEvents(): array
-    {
-        return $this->_transactionEventsService->getEvents();
-    }
-
-    public function showTransactionEvents(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    public function showPaymentEvents(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         return view('paymentEvents', [
-            'page' => 'dashboardPage',
-            'transactionEvents' => $this->getAllEvents()
+            'page' => $this->_transactionEventsService->page,
+            'paymentEvents' => $this->_transactionEventsService->getEvents(),
+//            'todayProductEventsCount' => $this->_transactionEventsService->getTodayOrderEventsCount(),
+//            'threeDayProductEventsCount' => $this->_transactionEventsService->getThreeDayOrderEventsCount(),
+//            'monthProductEventsCount' => $this->_transactionEventsService->getMonthOrderEventsCount()
         ]);
     }
 }

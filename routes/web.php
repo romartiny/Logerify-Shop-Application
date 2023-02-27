@@ -17,7 +17,7 @@ Route::middleware(['verify.shopify'])->group(function () {
         ->name('order-events');
     Route::get('/product-events', [ProductEventsController::class, 'showProductEvents'])
         ->name('product-events');
-    Route::get('/payment-events', [PaymentEventsController::class, 'showTransactionEvents'])
+    Route::get('/payment-events', [PaymentEventsController::class, 'showPaymentEvents'])
         ->name('transaction-events');
     Route::get('/info', [InfoController::class, 'showShopInfo'])
         ->name('shop-information');

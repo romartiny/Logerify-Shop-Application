@@ -3,8 +3,9 @@
 namespace App\Http\Helper;
 
 use App\Http\Helper\NormalizeCountEventsHelper as NormalizeCountEventsHelper;
+use App\Http\Helper\EventsHelperInterface as EventsHelperInterface;
 
-class DashboardEventsHelper extends NormalizeCountEventsHelper
+class DashboardEventsHelper extends NormalizeCountEventsHelper implements EventsHelperInterface
 {
     public function normalizeNumber(int $number): int
     {

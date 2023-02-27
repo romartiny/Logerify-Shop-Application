@@ -3,8 +3,9 @@
 namespace App\Http\Helper;
 
 use App\Http\Helper\NormalizeCountEventsHelper as NormalizeCountEventsHelper;
+use App\Http\Helper\EventsHelperInterface as EventsHelperInterface;
 
-class ProductEventsHelper extends NormalizeCountEventsHelper
+class ProductEventsHelper extends NormalizeCountEventsHelper implements EventsHelperInterface
 {
     private int $todayProductEventsCount = 0;
     private int $productEventsCount = 0;
