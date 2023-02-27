@@ -99,7 +99,7 @@
                                 <div class="box-mobile-info">
                                     <div class="box-type">
                                                 <span class="table-mobile-text text-gray-500">
-                                            {{ $event['contact_email'] }}
+                                            {{ $event['contact_email'] ? $event['contact_email'] : 'Hidden' }}
                                         </span>
                                     </div>
                                     <span class="table-mobile-text text-sm text-gray-700">
