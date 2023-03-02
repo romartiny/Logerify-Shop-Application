@@ -1,7 +1,7 @@
 <section class="dashboard">
     <div class="top">
         <i class="uil uil-bars sidebar-toggle"></i>
-        <span class="shop-name">{{ $shopDomain ?? Auth::user()->name }}</span>
+{{--        <span class="shop-name">{{ $shopDomain ?? Auth::user()->name }}</span>--}}
     </div>
     <div class="dash-content">
         <div class="activity">

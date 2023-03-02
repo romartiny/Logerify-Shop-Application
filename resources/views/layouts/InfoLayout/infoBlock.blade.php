@@ -1,9 +1,8 @@
 <div class="dashboard">
     <div class="top">
         <i class="uil uil-bars sidebar-toggle"></i>
-        <span class="shop-name">{{ $shopDomain ?? Auth::user()->name }}</span>
+{{--        <span class="shop-name">{{ $shopDomain ?? Auth::user()->name }}</span>--}}
     </div>
-{{--                                        {{ dd($infoEvent) }}--}}
     <div class="dash-content">
         <div class="activity">
             <div class="title">
@@ -13,10 +12,10 @@
             <div class="activity-data shop-info-data w-screen">
                 <div class="info-data-box">
                     <div class="box-info-description">
-                        <h1 class="box-title">{{ucfirst($infoEvent['name'])}} Info</h1>
+                        <h1 class="box-title">{{ucfirst($infoEvent['name'])}} Information</h1>
                         <div class="box-description">
                             <div class="box-description-info">
-                                <p class="box-text">Shop name: {{$infoEvent['name']}}</p>
+                                <p class="box-text">Shop name: {{ucfirst($infoEvent['name'])}}</p>
                                 <p class="box-text">Current plan: {{$infoEvent['plan_display_name']}}</p>
                                 <p class="box-text">Shopify domain: {{$infoEvent['myshopify_domain']}}</p>
                                 <p class="box-text">Shop owner: {{$infoEvent['shop_owner']}}</p>

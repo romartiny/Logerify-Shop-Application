@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link href="/assets/css/loader.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/Pages/InfoStyle.css" rel="stylesheet" type="text/css">
     @extends('layouts.jsScripts')
     <title>Logerify | Information</title>
 </head>

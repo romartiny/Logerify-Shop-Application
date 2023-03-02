@@ -570,45 +570,6 @@ input:checked ~ .collapsible-data {
     margin-bottom: -15px;
 }
 
-.shop-info-data {
-    padding: 35px;
-}
-
-.info-data-box {
-    width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    align-content: space-around;
-    align-items: center;
-}
-
-.box-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text-color);
-    padding-bottom: 16px;
-}
-
-.box-text {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-color);
-    transition: var(--tran-05);
-}
-
-.box-info-description {
-    border: 1px solid var(--border-color);
-    padding: 30px;
-    border-radius: 56px;
-    background-color: var(--box-mobile-color);
-    text-align: center;
-}
-
-.box-picture-stats {
-    width: 400px;
-}
-
 @media (max-width: 1000px) {
     nav {
         width: 73px;
@@ -748,6 +709,7 @@ input:checked ~ .collapsible-data {
     }
 }
 @media (max-width: 560px) {
+
     .dash-content .boxes .box{
         width: 100% ;
     }
@@ -756,11 +718,8 @@ input:checked ~ .collapsible-data {
         display: none;
     }
 
-    /*FIX IT*/
-    /*.sidebar-toggle {*/
-    /*    display: none;*/
-    /*}*/
 }
+
 @media (max-width: 400px) {
 
     nav {
