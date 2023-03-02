@@ -13,7 +13,7 @@
                 <div class="export-block">
                     <div class="export-box">
                         <div class="export-form">
-                            <span class="export-title">Export</span>
+                            <span class="export-title">Export Data</span>
                             <p class="export-additional-info">Export to csv can help to get access to the data without application in any place. Be careful with the date uploaded and do not let the date fall into the other hands.</p>
                             <span class="export-variant-text">Export Data</span>
                             <div class="export-variant">

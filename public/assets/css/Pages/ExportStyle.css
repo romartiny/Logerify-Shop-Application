@@ -1,5 +1,5 @@
 .export-block {
-    padding-top: 30px;
+    /*padding-top: 0px;*/
 }
 
 .export-data {
@@ -12,17 +12,18 @@
 }
 
 .export-form {
-    width: 700px;
-    height: 760px;
+    width: 545px;
+    height: 640px;
     border: 1px solid var(--border-color);
     border-radius: 35px;
     padding: 35px;
 }
 
 .export-additional-info {
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 300;
     color: var(--text-color);
-    padding: 20px 0 20px 0;
+    padding: 11px 0 13px 0;
 }
 
 .export-title {
@@ -31,14 +32,13 @@
     align-content: stretch;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    padding: 15px 0 20px 0;
-    font-size: 34px;
+    font-size: 24px;
     font-weight: 700;
     color: var(--text-color);
 }
 
 .export-variant-text {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
     color: var(--text-color);
 }
@@ -73,7 +73,7 @@ select::-ms-expand {
 }
 
 .export-date-label {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     color: var(--text-color);
 }
@@ -91,12 +91,12 @@ input[type=date] {
     color: var(--text-color);
 }
 
-.export-date-start {
-    padding-top: 10px;
-}
+/*.export-date-start {*/
+/*    padding-top: 10px;*/
+/*}*/
 
 .export-date-end {
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .form-footer {
