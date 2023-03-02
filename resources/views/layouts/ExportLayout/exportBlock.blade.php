@@ -40,7 +40,7 @@
                                 <div class="export-date-start">
                                     <label for="start" class="export-date-label">Start date</label>
                                     <input type="date" id="start" name="events-start"
-                                           value="2018-07-22"
+                                           value="2023-01-01"
                                            min="2018-01-01" max="2024-12-31">
                                 </div>
 
@@ -48,7 +48,7 @@
                                     <label for="end" class="export-date-label">Last date</label>
 
                                     <input type="date" id="end" name="events-end"
-                                           value="2018-07-22"
+                                           value="2023-01-01"
                                            min="2018-01-01" max="2024-12-31">
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                             <div class="form-footer">
                                 <div class="export-help-link">
                                     <span class="export-help-text">Learn more</span>
-                                    <a href="/info" class="export-help-link">about Logerify</a>
+                                    <a href="/help" class="export-help-link">about Logerify</a>
                                 </div>
 
                                 <button class="download-export-events-button">Export Events</button>
