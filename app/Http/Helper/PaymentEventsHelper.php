@@ -35,11 +35,7 @@ class PaymentEventsHelper extends NormalizeCountEventsHelper implements EventsHe
 
     public function normalizeShopEvents(array $shopEvents): array
     {
-        foreach ($shopEvents as $key => $shopEvent) {
-            $shopEvents[$key]['processed_at'] = date("m/d/Y h:i:s", strtotime($shopEvent['processed_at']));
-        }
-
-        return $shopEvents;
+        return parent::normalizeShopEvents($shopEvents);
     }
 
     public function normalizeNumber(int $number): int

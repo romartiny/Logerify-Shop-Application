@@ -35,7 +35,12 @@ class OrderEventsHelper extends NormalizeCountEventsHelper implements EventsHelp
 
     public function normalizeShopEvents(array $shopEvents): array
     {
-        return parent::normalizeShopEvents($shopEvents);
+        foreach ($shopEvents as $key => $shopEvent) {
+            $shopEvents[$key]['created_at'] = date("m/d/Y h:i:s", strtotime($shopEvent['created_at']));
+            $shopEvents[$key]['updated_at'] = date("m/d/Y h:i:s", strtotime($shopEvent['updated_at']));
+        }
+
+        return $shopEvents;
     }
 
     public function normalizeNumber(int $number): int

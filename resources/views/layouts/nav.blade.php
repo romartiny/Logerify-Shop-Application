@@ -30,6 +30,13 @@
                 </a>
             </li>
             <li>
+                <a @if($page == 'themePage')class="link-current" @endif
+                href="/theme-events">
+                    <i class="uil uil-swatchbook"></i>
+                    <span class="link-name @if($page == 'themePage')link-name-current @endif">Theme</span>
+                </a>
+            </li>
+            <li>
                 <a @if($page == 'productPage')class="link-current" @endif
                     href="/product-events">
                     <i class="uil uil-package"></i>
