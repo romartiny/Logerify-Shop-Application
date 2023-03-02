@@ -29,7 +29,9 @@
                     </div>
                     <div class="box box2">
                         <i class="uil uil-clock"></i>
-                        <span class="number">{{$currentThemeName}}</span>
+                        <span class="number">{{strlen($currentThemeName) > 9
+                                            ? substr($currentThemeName, 0, 5) . '...'
+                                            : $currentThemeName}}</span>
                         <span class="text">current theme</span>
                     </div>
                     <div class="box box3">
