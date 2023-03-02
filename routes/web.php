@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PageControllers\AdminEventsController;
 use App\Http\Controllers\PageControllers\DashboardController;
+use App\Http\Controllers\PageControllers\ExportEventsController;
 use App\Http\Controllers\PageControllers\HelpController;
 use App\Http\Controllers\PageControllers\InfoController;
 use App\Http\Controllers\PageControllers\OrderEventsController;
@@ -23,6 +24,8 @@ Route::middleware(['verify.shopify'])->group(function () {
         ->name('product-events');
     Route::get('/payment-events', [PaymentEventsController::class, 'showPaymentEvents'])
         ->name('payment-events');
+    Route::get('/export', [ExportEventsController::class, 'showShopExport'])
+        ->name('shop-export');
     Route::get('/info', [InfoController::class, 'showShopInfo'])
         ->name('shop-information');
     Route::get('/help', [HelpController::class, 'showAppInfo'])

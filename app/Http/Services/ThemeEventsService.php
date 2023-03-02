@@ -44,5 +44,4 @@ class ThemeEventsService implements EventsInterface
 
         return array_reverse($this->_themeEventsHelper->normalizeShopEvents($this->fetchedData['body']['container']['themes']));
     }
-
 }
