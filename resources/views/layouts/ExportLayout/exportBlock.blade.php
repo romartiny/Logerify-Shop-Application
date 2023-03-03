@@ -32,7 +32,6 @@
                                 <label for="export-type"></label>
                                 <select name="export-type" id="export-type">
                                     <option value="csv">CSV for Excel, Numbers, or other spreadsheet programs</option>
-                                    <option value="txt">Txt file</option>
                                 </select>
                             </div>
 

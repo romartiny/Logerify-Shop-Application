@@ -141,3 +141,12 @@ input[type=date] {
         padding-top: 35px;
     }
 }
+
+@media (max-width: 560px) {
+
+    .export-form {
+        width: 290px;
+        height: 740px;
+    }
+
+}

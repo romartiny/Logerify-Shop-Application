@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\PageControllers;
 
-class ExportEventsController
+use App\Http\Controllers\Controller as Controller;
+
+class ExportEventsController extends Controller
 {
     public function showShopExport(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {

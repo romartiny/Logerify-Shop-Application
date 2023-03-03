@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\PageControllers;
 
-use App\Http\Controllers\Controller;
-
+use App\Http\Controllers\Controller as Controller;
 
 class HelpController extends Controller
 {

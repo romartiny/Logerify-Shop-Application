@@ -2,41 +2,29 @@
 
 namespace App\Http\Services;
 
-use App\Http\Controllers\AuthController as AuthController;
-use App\Http\Repository\ResponseRepository as ResponseRepository;
+use App\Http\Helper\InfoEventsHelper as InfoEventsHelper;
+use App\Http\Services\EventsInterface as EventsInterface;
+use App\Http\Services\FetchService\FetchDataService as FetchDataService;
 
-class InfoService
+class InfoService implements EventsInterface
 {
-    private ResponseRepository $_request;
-    private \App\Http\Controllers\AuthController $_authInformation;
-    public string $getRequestType = 'GET';
+    private InfoEventsHelper $_infoEventsHelper;
+    private FetchDataService $_fetchData;
+    private array $fetchedData = [];
+    public string $page = 'infoPage';
+    private string $getRequestType = 'GET';
+    private string $resourceEventType = 'shop.json';
 
-    public function __construct(ResponseRepository $request, AuthController $authInformation)
+    public function __construct(FetchDataService $fetchData, InfoEventsHelper $infoEventsHelper)
     {
-        $this->_request = $request;
-        $this->_authInformation = $authInformation;
+        $this->_fetchData = $fetchData;
+        $this->_infoEventsHelper = $infoEventsHelper;
     }
 
-    public function retrieveData($requestType, $authInformation, $resourceType)
+    public function getEvents(): array
     {
-        return $this->_request->getShopifyResponse($requestType, $authInformation,
-            $resourceType);
-    }
+        $this->fetchedData = $this->_fetchData->fetchShopifyData($this->getRequestType, $this->resourceEventType);
 
-    public function grabShopInfo(): array
-    {
-        $resourceType = 'shop.json';
-        $totalEvents = $this->retrieveData($this->getRequestType,
-            $this->_authInformation->authorizedUser(), $resourceType );
-
-        return $this->normalizeShopDates($totalEvents['body']['container']['shop']);
-    }
-
-    public function normalizeShopDates($shopEvents): array
-    {
-        $shopEvents['created_at'] = date("m/d/Y h:i:s",strtotime($shopEvents['created_at']));
-        $shopEvents['updated_at'] = date("m/d/Y h:i:s",strtotime($shopEvents['updated_at']));
-
-        return $shopEvents;
+        return $this->_infoEventsHelper->normalizeShopEvents($this->fetchedData['body']['container']['shop']);
     }
 }

@@ -5,7 +5,6 @@ namespace App\Http\Controllers\PageControllers;
 use App\Http\Controllers\Controller as Controller;
 use App\Http\Services\OrderEventsService as OrderEventsService;
 
-
 class OrderEventsController extends Controller
 {
     public OrderEventsService $_orderEventsService;

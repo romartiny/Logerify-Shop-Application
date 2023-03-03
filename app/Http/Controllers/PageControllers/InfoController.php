@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\PageControllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Services\InfoService;
-
+use App\Http\Controllers\Controller as Controller;
+use App\Http\Services\InfoService as InfoService;
 
 class InfoController extends Controller
 {
@@ -15,16 +14,11 @@ class InfoController extends Controller
         $this->_infoService = $infoService;
     }
 
-    public function getAllEvents(): array
-    {
-        return $this->_infoService->grabShopInfo();
-    }
-
     public function showShopInfo(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         return view('info', [
             'page' => 'infoPage',
-            'infoEvent' => $this->getAllEvents()
+            'infoEvent' => $this->_infoService->getEvents()
         ]);
     }
 }
