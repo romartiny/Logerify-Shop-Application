@@ -9,6 +9,7 @@ use App\Http\Controllers\PageControllers\OrderEventsController;
 use App\Http\Controllers\PageControllers\PaymentEventsController;
 use App\Http\Controllers\PageControllers\ProductEventsController;
 use App\Http\Controllers\PageControllers\ThemeEventsController;
+use App\Http\Controllers\PageControllers\OrderEventController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['verify.shopify'])->group(function () {
@@ -17,6 +18,8 @@ Route::middleware(['verify.shopify'])->group(function () {
     Route::get('/admin-events', [AdminEventsController::class, 'showAdminEvents'])
         ->name('admin-events');
     Route::get('/order-events', [OrderEventsController::class, 'showOrderEvents'])
+        ->name('order-events');
+    Route::get('/order-events/{id}', [OrderEventController::class, 'showOrderEvent'])
         ->name('order-events');
     Route::get('/theme-events', [ThemeEventsController::class, 'showThemeEvents'])
         ->name('theme-events');

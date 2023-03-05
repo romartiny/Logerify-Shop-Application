@@ -90,7 +90,7 @@
                                     {{ $event['created_at'] }}
                                 </td>
                                 <td class="total-info p-3 text-sm text-gray-700">
-                                    <a href="" class="table-mobile-view text-blue-500 font-bold">
+                                    <a href="/order-events/{{$event['id']}}" class="table-mobile-view text-blue-500 font-bold">
                                         View
                                     </a>
                                 </td>
@@ -121,7 +121,7 @@
                                             </span>
                                         </div>
                                         <span class="table-mobile-text text-gray-500">
-                                                <a href="" class="table-mobile-view text-blue-500 font-bold">
+                                                <a href="/order-events/{{$event['id']}}" class="table-mobile-view text-blue-500 font-bold">
                                                     View
                                                 </a>
                                         </span>
