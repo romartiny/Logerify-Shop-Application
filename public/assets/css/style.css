@@ -461,9 +461,34 @@ nav.close ~ .dashboard .top {
 
 .dash-content .activity .activity-data {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
+}
+
+.activity-data-empty {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 20px;
+}
+
+.activity-data-empty-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    color: var(--title-icon-color);
+    font-size: 24px;
+}
+
+.activity-data-empty-text {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-left: 5px;
 }
 
 .activity .activity-data {
