@@ -1,0 +1,41 @@
+.uil-backward {
+    height: 35px;
+    width: 35px;
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    color: var(--title-icon-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.box-info-block {
+    width: 450px;
+    height: 550px;
+}
+
+.event-data {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.items-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+
+.table-item-text {
+    color: var(--text-color);
+}
+
+.line-items {
+    display: block;
+    /*width: 780px;*/
+    background-color: var(--box-mobile-color);
+    border-radius: 20px;
+}
+
